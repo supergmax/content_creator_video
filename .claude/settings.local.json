@@ -58,7 +58,9 @@
       "Bash(npx @biomejs/biome check --write --unsafe .)",
       "Bash(winget:*)",
       "Bash(mkdir:*)",
-      "Bash(claude:*)"
+      "Bash(claude:*)",
+      "Bash(head -50 \"C:\\\\Users\\\\gmax9\\\\OneDrive\\\\Bureau\\\\stellarPulse\\\\content_creator_video\\\\.next\\\\static\\\\css\\\\app\"/*.css)",
+      "Bash(curl -s http://localhost:3000)"
     ]
   }
 }
