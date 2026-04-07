@@ -10,7 +10,8 @@
     "remotion:studio": "npx remotion studio remotion/Root.tsx",
     "remotion:render": "npx remotion render",
     "lint": "npx @biomejs/biome check .",
-    "lint:fix": "npx @biomejs/biome check --write ."
+    "lint:fix": "npx @biomejs/biome check --write .",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@ai-sdk/gateway": "^3.0.91",
@@ -35,6 +36,6 @@
     "@types/node": "^25.5.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "typescript": "^6.0.2"
+    "typescript": "^5.8.3"
   }
 }

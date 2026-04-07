@@ -1,6 +1,12 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
-  "organizeImports": { "enabled": true },
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -19,5 +25,8 @@
       "semicolons": "always",
       "trailingCommas": "all"
     }
+  },
+  "files": {
+    "includes": ["**", "!.next", "!node_modules", "!.remotion", "!out"]
   }
 }

@@ -3,7 +3,8 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   webpack: (config, { isServer }) => {
     if (isServer) {
-      config.externals = [...(config.externals ?? []), 'remotion', '@remotion/player'];
+      const existing = Array.isArray(config.externals) ? config.externals : [];
+      config.externals = [...existing, /^remotion/, /^@remotion\//];
     }
     return config;
   },
