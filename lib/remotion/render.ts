@@ -1,4 +1,4 @@
-import { writeFileSync, unlinkSync } from 'node:fs';
+import { writeFileSync, unlinkSync, mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawn } from 'node:child_process';
@@ -23,6 +23,8 @@ export function spawnRender(
       'renders',
       `${job.outputName}.mp4`,
     );
+
+    mkdirSync(path.join(process.cwd(), 'public', 'renders'), { recursive: true });
 
     const tempPropsPath = join(tmpdir(), `remotion-props-${job.outputName}.json`);
     writeFileSync(tempPropsPath, JSON.stringify(job.props));
