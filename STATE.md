@@ -2,30 +2,41 @@
 
 ## Session courante
 Date: 2026-04-07
-Status: Projet complet — v1.0 opérationnelle
+Status: **v1.0 complète et opérationnelle**
 
-## Dernière tâche complétée
-- Pipeline complet bout-en-bout : preview + IA + render MP4
-- 4 skills Remotion installés
+## Stack en production
+- Next.js 15.5 · React 19 · TypeScript strict
+- Remotion 4 · @remotion/player
+- Framer Motion 12 · shadcn/ui · Tailwind v4
+- Zustand 5 · Zod 4 · Biome 2
 
 ## Fonctionnalités livrées
-- Dashboard avec grille de projets
-- Éditeur split-pane (ControlPanel + PreviewPanel)
-- 4 templates Remotion : SaaS Promo, Course Intro, Social Hook, Text Reveal
-- 3 formats : 16:9, 9:16, 1:1
-- Génération IA des props via Claude (Vercel AI Gateway)
-- Rendu MP4 local via Remotion CLI + ffmpeg
-- SSE progress bar pour le rendu
-- 6 skills Claude configurés
+- Dashboard avec grille de projets (`/`)
+- Éditeur split-pane (`/editor/[id]`) : ControlPanel + PreviewPanel
+- 4 templates Remotion avec schémas Zod :
+  - SaaS Promo (16:9)
+  - Course Intro (16:9)
+  - Social Hook (9:16)
+  - Text Reveal (16:9 · 9:16 · 1:1)
+- Génération IA via **Claude Code subprocess** — sans clé API
+- Render MP4 local via Remotion CLI + ffmpeg + SSE progress
+- Historique des rendus persistant avec taille et date (`/renders`)
+- 7 skills Claude Code dans `.claude/skills/`
+- Commande `/generate-props` depuis Claude Code
+
+## Prérequis installés
+- ffmpeg 8.1 (`winget install Gyan.FFmpeg` — fait)
+- Claude Code CLI (en cours d'exécution)
+
+## Démarrer
+```bash
+npm run dev   # http://localhost:3000
+```
 
 ## Blockers
-- ffmpeg doit être installé manuellement pour le rendu : `winget install Gyan.FFmpeg`
+- Aucun
 
-## En cours
-- Aucun blocker logiciel
-
-## Prochaines étapes (ROADMAP v2)
-- Remotion Lambda pour le rendu cloud
-- Persistance des projets (fichiers JSON ou SQLite)
-- Auth / multi-utilisateurs
-- Marketplace de templates
+## Derniers commits
+- `ea41d44` feat: replace AI Gateway with claude CLI subprocess
+- `b9c7a07` fix: command injection, SSE leak, AI error feedback, persistent render history
+- `b1d9d48` chore: lint fixes and final quality review
