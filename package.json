@@ -1,0 +1,40 @@
+{
+  "name": "stellar-pulse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "StellarPulse — local video studio for content creators",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "remotion:studio": "npx remotion studio remotion/Root.tsx",
+    "remotion:render": "npx remotion render",
+    "lint": "npx @biomejs/biome check .",
+    "lint:fix": "npx @biomejs/biome check --write ."
+  },
+  "dependencies": {
+    "@ai-sdk/gateway": "^3.0.91",
+    "@remotion/cli": "^4.0.446",
+    "@remotion/media-utils": "^4.0.446",
+    "@remotion/noise": "^4.0.446",
+    "@remotion/player": "^4.0.446",
+    "@tailwindcss/postcss": "^4.2.2",
+    "ai": "^6.0.149",
+    "framer-motion": "^12.38.0",
+    "next": "^15.5.14",
+    "postcss": "^8.5.8",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.446",
+    "tailwindcss": "^4.2.2",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.10",
+    "@types/node": "^25.5.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.2"
+  }
+}
