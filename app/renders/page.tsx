@@ -2,6 +2,8 @@ import { RenderList } from '@/components/renders/RenderList';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 export default function RendersPage() {
   return (
     <div className="min-h-screen bg-background">

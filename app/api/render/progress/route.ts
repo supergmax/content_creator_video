@@ -1,5 +1,5 @@
 import { type NextRequest } from 'next/server';
-import { renderProgress } from '../route';
+import { renderProgress } from '@/lib/render-state';
 
 export async function GET(req: NextRequest) {
   const renderKey = req.nextUrl.searchParams.get('key');

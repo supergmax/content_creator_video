@@ -3,6 +3,8 @@ import { PreviewPanel } from '@/components/studio/PreviewPanel';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 export default function EditorPage() {
   return (
     <div className="h-screen flex flex-col bg-background overflow-hidden">

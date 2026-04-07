@@ -2,6 +2,7 @@ import { type NextRequest } from 'next/server';
 import { z } from 'zod';
 import { FORMAT_DIMENSIONS, TEMPLATES } from '@/lib/templates';
 import { spawnRender } from '@/lib/remotion/render';
+import { renderProgress } from '@/lib/render-state';
 
 const COMPOSITION_IDS: Record<string, string> = {
   'saas-promo': 'SaasPromo',
@@ -9,8 +10,6 @@ const COMPOSITION_IDS: Record<string, string> = {
   'social-hook': 'SocialHook',
   'text-reveal': 'TextReveal',
 };
-
-export const renderProgress: Map<string, number> = new Map();
 
 const renderRequestSchema = z.object({
   templateId: z.enum(['saas-promo', 'course-intro', 'social-hook', 'text-reveal']),

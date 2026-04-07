@@ -40,6 +40,7 @@ next-env.d.ts
 # remotion renders
 /out
 /public/renders/
+*.mp4
 
 # Superpowers
 .superpowers/
