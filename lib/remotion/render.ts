@@ -1,3 +1,6 @@
+import { writeFileSync, unlinkSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 
@@ -20,7 +23,9 @@ export function spawnRender(
       'renders',
       `${job.outputName}.mp4`,
     );
-    const propsJson = JSON.stringify(job.props);
+
+    const tempPropsPath = join(tmpdir(), `remotion-props-${job.outputName}.json`);
+    writeFileSync(tempPropsPath, JSON.stringify(job.props));
 
     const child = spawn(
       'npx',
@@ -30,9 +35,8 @@ export function spawnRender(
         'remotion/Root.tsx',
         job.compositionId,
         outputPath,
-        `--props=${propsJson}`,
+        `--props=${tempPropsPath}`,
       ],
-      { shell: true },
     );
 
     const parseProgress = (text: string) => {
@@ -44,6 +48,7 @@ export function spawnRender(
     child.stderr.on('data', (data: Buffer) => parseProgress(data.toString()));
 
     child.on('close', (code) => {
+      try { unlinkSync(tempPropsPath); } catch { /* ignore cleanup errors */ }
       if (code === 0) resolve(`renders/${job.outputName}.mp4`);
       else reject(new Error(`Render exited with code ${code}`));
     });

@@ -7,6 +7,7 @@ import { TEMPLATES } from '@/lib/templates';
 
 export const AIPromptInput = () => {
   const [prompt, setPrompt] = useState('');
+  const [validationError, setValidationError] = useState<string | null>(null);
   const { templateId, setProps, isGenerating, setIsGenerating } =
     useStudioStore();
 
@@ -14,6 +15,7 @@ export const AIPromptInput = () => {
     if (!prompt.trim() || isGenerating) return;
     setIsGenerating(true);
 
+    setValidationError(null);
     try {
       const res = await fetch('/api/ai/generate', {
         method: 'POST',
@@ -41,10 +43,15 @@ export const AIPromptInput = () => {
         const validated = (template.schema as any).safeParse(rawProps);
         if (validated.success) {
           setProps(validated.data as Record<string, unknown>);
+        } else {
+          setValidationError("L'IA a retourné des props invalides. Réessaie avec un prompt plus précis.");
         }
+      } else {
+        setValidationError("L'IA n'a pas retourné de données utilisables. Réessaie.");
       }
     } catch (err) {
       console.error('AI generation error:', err);
+      setValidationError("Erreur lors de la génération. Vérifie ta connexion et réessaie.");
     } finally {
       setIsGenerating(false);
     }
@@ -77,6 +84,9 @@ export const AIPromptInput = () => {
       >
         {isGenerating ? '⟳ Génération…' : '✦ Générer avec IA'}
       </Button>
+      {validationError && (
+        <p className="text-xs text-red-500 mt-1">{validationError}</p>
+      )}
     </div>
   );
 };

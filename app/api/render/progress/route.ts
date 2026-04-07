@@ -9,10 +9,11 @@ export async function GET(req: NextRequest) {
   }
 
   const encoder = new TextEncoder();
+  let interval: ReturnType<typeof setInterval>;
 
   const stream = new ReadableStream({
     start(controller) {
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         const progress = renderProgress.get(renderKey) ?? 0;
         const done = progress === 100;
         const error = progress === -1;
@@ -32,6 +33,9 @@ export async function GET(req: NextRequest) {
           if (!error) renderProgress.delete(renderKey);
         }
       }, 500);
+    },
+    cancel() {
+      clearInterval(interval);
     },
   });
 
