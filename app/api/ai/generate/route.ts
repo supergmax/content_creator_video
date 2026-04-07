@@ -1,6 +1,5 @@
-import { streamText } from 'ai';
 import { z } from 'zod';
-import { AI_MODEL } from '@/lib/ai/client';
+import { runClaude } from '@/lib/ai/claude-cli';
 import { buildSystemPrompt, buildUserPrompt } from '@/lib/ai/prompts';
 
 const requestSchema = z.object({
@@ -18,21 +17,20 @@ export async function POST(req: Request) {
   const parsed = requestSchema.safeParse(body);
 
   if (!parsed.success) {
-    return new Response(JSON.stringify({ error: 'Invalid request' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return Response.json({ error: 'Invalid request' }, { status: 400 });
   }
 
   const { prompt, templateId } = parsed.data;
+  const fullPrompt = `${buildSystemPrompt(templateId)}\n\n${buildUserPrompt(prompt)}`;
 
-  const result = streamText({
-    model: AI_MODEL,
-    system: buildSystemPrompt(templateId),
-    prompt: buildUserPrompt(prompt),
-    maxOutputTokens: 500,
-    temperature: 0.7,
-  });
-
-  return result.toTextStreamResponse();
+  try {
+    const text = await runClaude(fullPrompt);
+    return Response.json({ text });
+  } catch (err) {
+    console.error('[ai/generate] claude CLI error:', err);
+    return Response.json(
+      { error: 'Génération IA échouée — claude CLI non disponible' },
+      { status: 503 },
+    );
+  }
 }

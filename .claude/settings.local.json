@@ -55,7 +55,10 @@
       "Bash(python3 -c 'import sys,json; d=json.load\\(sys.stdin\\); defs=d.get\\('\\\\''$defs'\\\\'',{}\\); cc=defs.get\\('\\\\''CssConfiguration'\\\\'',{}\\); print\\(json.dumps\\(cc, indent=2\\)\\)')",
       "Bash(python3 -c 'import sys,json; d=json.load\\(sys.stdin\\); defs=d.get\\('\\\\''$defs'\\\\'',{}\\); cc=defs.get\\('\\\\''CssConfiguration'\\\\'',{}\\); print\\(list\\(cc.get\\('\\\\''properties'\\\\'',{}\\).keys\\(\\)\\)\\)')",
       "Bash(python3 -c 'import sys,json; d=json.load\\(sys.stdin\\); defs=d.get\\('\\\\''$defs'\\\\'',{}\\); p=defs.get\\('\\\\''CssParserConfiguration'\\\\'',{}\\); print\\(json.dumps\\(p, indent=2\\)\\)')",
-      "Bash(npx @biomejs/biome check --write --unsafe .)"
+      "Bash(npx @biomejs/biome check --write --unsafe .)",
+      "Bash(winget:*)",
+      "Bash(mkdir:*)",
+      "Bash(claude:*)"
     ]
   }
 }

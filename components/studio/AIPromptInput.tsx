@@ -23,19 +23,14 @@ export const AIPromptInput = () => {
         body: JSON.stringify({ prompt, templateId }),
       });
 
-      if (!res.ok) throw new Error('Génération échouée');
-
-      const reader = res.body?.getReader();
-      const decoder = new TextDecoder();
-      let accumulated = '';
-
-      while (reader) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        accumulated += decoder.decode(value, { stream: true });
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({})) as { error?: string };
+        throw new Error(errData.error ?? 'Génération échouée');
       }
 
-      const jsonMatch = accumulated.match(/\{[\s\S]*\}/);
+      const data = await res.json() as { text?: string };
+      const text = data.text ?? '';
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
       if (jsonMatch) {
         const rawProps = JSON.parse(jsonMatch[0]);
         const template = TEMPLATES[templateId];

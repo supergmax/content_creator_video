@@ -10,11 +10,19 @@ Studio de création vidéo local. Next.js 15 + Remotion 4. Pas de cloud, pas d'a
 - `add-sfx` — audio et effets sonores
 - `framer-motion` — animations Framer Motion dans les compositions
 - `21st-dev-components` — composants 21st.dev + shadcn
+- `ai-generation` — génération de props JSON pour les templates (via Claude Code)
 
 ## Commandes utiles
 - `npm run dev` — Next.js sur localhost:3000
 - `npm run remotion:studio` — Remotion Studio sur localhost:3001
 - `npm run remotion:render <comp> <output>` — render MP4 local
+- `/generate-props <template-id> <description>` — générer des props JSON depuis Claude Code
+
+## Génération IA
+L'IA utilise **Claude Code en subprocess** (`claude -p`). Aucune clé API requise.
+- Via l'interface web : bouton "✦ Générer avec IA" dans l'éditeur
+- Via Claude Code : commande `/generate-props`
+- Prérequis : Claude Code doit être lancé dans le répertoire du projet
 
 ## Conventions
 - Compositions Remotion dans `/remotion/compositions/<nom>/`
