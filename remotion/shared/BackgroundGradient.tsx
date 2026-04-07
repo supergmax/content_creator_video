@@ -1,4 +1,4 @@
-import { useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
+import { interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 
 interface BackgroundGradientProps {
   color1?: string;
@@ -17,7 +17,9 @@ export const BackgroundGradient = ({
   const { durationInFrames } = useVideoConfig();
 
   const progress = animated
-    ? interpolate(frame, [0, durationInFrames], [0, 360], { extrapolateRight: 'clamp' })
+    ? interpolate(frame, [0, durationInFrames], [0, 360], {
+        extrapolateRight: 'clamp',
+      })
     : 0;
 
   return (

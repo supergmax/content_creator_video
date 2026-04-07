@@ -1,4 +1,4 @@
-import { useCurrentFrame, useVideoConfig, interpolate, spring } from 'remotion';
+import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { AnimatedText } from '@/remotion/shared/AnimatedText';
 import { BackgroundGradient } from '@/remotion/shared/BackgroundGradient';
 import type { CourseIntroProps } from './schema';
@@ -14,14 +14,43 @@ export const CourseIntro = ({
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
 
-  const lineProgress = spring({ frame: frame - fps * 0.8, fps, config: { damping: 20, stiffness: 80 } });
-  const lineWidth = interpolate(lineProgress, [0, 1], [0, width * 0.06], { extrapolateRight: 'clamp' });
+  const lineProgress = spring({
+    frame: frame - fps * 0.8,
+    fps,
+    config: { damping: 20, stiffness: 80 },
+  });
+  const lineWidth = interpolate(lineProgress, [0, 1], [0, width * 0.06], {
+    extrapolateRight: 'clamp',
+  });
 
   return (
-    <div style={{ width, height, position: 'relative', overflow: 'hidden', fontFamily: 'Inter, system-ui, sans-serif', display: 'flex', alignItems: 'center' }}>
-      <BackgroundGradient color1={accentColor} color2="#6366f1" backgroundColor={backgroundColor} />
+    <div
+      style={{
+        width,
+        height,
+        position: 'relative',
+        overflow: 'hidden',
+        fontFamily: 'Inter, system-ui, sans-serif',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <BackgroundGradient
+        color1={accentColor}
+        color2="#6366f1"
+        backgroundColor={backgroundColor}
+      />
 
-      <div style={{ position: 'relative', zIndex: 1, paddingLeft: width * 0.1, display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          paddingLeft: width * 0.1,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 12,
+        }}
+      >
         <AnimatedText
           text={`CHAPITRE ${chapterNumber}`}
           delay={0}
@@ -30,7 +59,14 @@ export const CourseIntro = ({
           fontWeight={600}
           style="fade"
         />
-        <div style={{ width: lineWidth, height: 3, background: accentColor, borderRadius: 2 }} />
+        <div
+          style={{
+            width: lineWidth,
+            height: 3,
+            background: accentColor,
+            borderRadius: 2,
+          }}
+        />
         <AnimatedText
           text={chapterTitle}
           delay={fps * 0.5}

@@ -1,11 +1,25 @@
 'use client';
 import { motion } from 'framer-motion';
-import { ProjectCard } from './ProjectCard';
 import Link from 'next/link';
+import { ProjectCard } from './ProjectCard';
 
 const DEMO_PROJECTS = [
-  { id: 'demo-1', name: 'Product Launch', templateName: 'SaaS Promo', format: '16:9', updatedAt: 'il y a 2h', accentColor: '#a855f7' },
-  { id: 'demo-2', name: 'Reel Intro', templateName: 'Social Hook', format: '9:16', updatedAt: 'hier', accentColor: '#f59e0b' },
+  {
+    id: 'demo-1',
+    name: 'Product Launch',
+    templateName: 'SaaS Promo',
+    format: '16:9',
+    updatedAt: 'il y a 2h',
+    accentColor: '#a855f7',
+  },
+  {
+    id: 'demo-2',
+    name: 'Reel Intro',
+    templateName: 'Social Hook',
+    format: '9:16',
+    updatedAt: 'hier',
+    accentColor: '#f59e0b',
+  },
 ];
 
 export const ProjectGrid = () => {

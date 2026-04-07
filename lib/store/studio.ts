@@ -31,31 +31,36 @@ export const useStudioStore = create<StudioState>((set) => ({
   render: { isRendering: false, progress: 0, lastRenderPath: null },
   isGenerating: false,
 
-  setTemplateId: (id) => set({
-    templateId: id,
-    props: TEMPLATES[id].defaultProps,
-    format: TEMPLATES[id].defaultFormat,
-  }),
+  setTemplateId: (id) =>
+    set({
+      templateId: id,
+      props: TEMPLATES[id].defaultProps,
+      format: TEMPLATES[id].defaultFormat,
+    }),
 
   setProps: (props) => set({ props }),
 
-  setProp: (key, value) => set((state) => ({
-    props: { ...state.props, [key]: value },
-  })),
+  setProp: (key, value) =>
+    set((state) => ({
+      props: { ...state.props, [key]: value },
+    })),
 
   setFormat: (format) => set({ format }),
 
-  setRenderProgress: (progress) => set((state) => ({
-    render: { ...state.render, isRendering: true, progress },
-  })),
+  setRenderProgress: (progress) =>
+    set((state) => ({
+      render: { ...state.render, isRendering: true, progress },
+    })),
 
-  setRenderComplete: (path) => set({
-    render: { isRendering: false, progress: 100, lastRenderPath: path },
-  }),
+  setRenderComplete: (path) =>
+    set({
+      render: { isRendering: false, progress: 100, lastRenderPath: path },
+    }),
 
-  setRenderIdle: () => set({
-    render: { isRendering: false, progress: 0, lastRenderPath: null },
-  }),
+  setRenderIdle: () =>
+    set({
+      render: { isRendering: false, progress: 0, lastRenderPath: null },
+    }),
 
   setIsGenerating: (v) => set({ isGenerating: v }),
 }));

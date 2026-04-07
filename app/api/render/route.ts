@@ -1,8 +1,8 @@
-import { type NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
 import { z } from 'zod';
-import { FORMAT_DIMENSIONS, TEMPLATES } from '@/lib/templates';
 import { spawnRender } from '@/lib/remotion/render';
 import { renderProgress } from '@/lib/render-state';
+import { FORMAT_DIMENSIONS, TEMPLATES } from '@/lib/templates';
 
 const COMPOSITION_IDS: Record<string, string> = {
   'saas-promo': 'SaasPromo',
@@ -12,10 +12,19 @@ const COMPOSITION_IDS: Record<string, string> = {
 };
 
 const renderRequestSchema = z.object({
-  templateId: z.enum(['saas-promo', 'course-intro', 'social-hook', 'text-reveal']),
+  templateId: z.enum([
+    'saas-promo',
+    'course-intro',
+    'social-hook',
+    'text-reveal',
+  ]),
   format: z.enum(['16:9', '9:16', '1:1']),
   props: z.record(z.string(), z.unknown()),
-  outputName: z.string().min(1).max(100).regex(/^[a-z0-9-]+$/),
+  outputName: z
+    .string()
+    .min(1)
+    .max(100)
+    .regex(/^[a-z0-9-]+$/),
 });
 
 export async function POST(req: NextRequest) {
@@ -52,5 +61,8 @@ export async function POST(req: NextRequest) {
     .then(() => renderProgress.set(outputName, 100))
     .catch(() => renderProgress.set(outputName, -1));
 
-  return Response.json({ renderKey: outputName, message: 'Render started' }, { status: 202 });
+  return Response.json(
+    { renderKey: outputName, message: 'Render started' },
+    { status: 202 },
+  );
 }

@@ -1,12 +1,12 @@
 import { Composition } from 'remotion';
-import { SaasPromo } from './compositions/saas-promo/SaasPromo';
-import { saasPromoSchema } from './compositions/saas-promo/schema';
 import { CourseIntro } from './compositions/course-intro/CourseIntro';
 import { courseIntroSchema } from './compositions/course-intro/schema';
+import { SaasPromo } from './compositions/saas-promo/SaasPromo';
+import { saasPromoSchema } from './compositions/saas-promo/schema';
 import { SocialHook } from './compositions/social-hook/SocialHook';
 import { socialHookSchema } from './compositions/social-hook/schema';
-import { TextReveal } from './compositions/text-reveal/TextReveal';
 import { textRevealSchema } from './compositions/text-reveal/schema';
+import { TextReveal } from './compositions/text-reveal/TextReveal';
 
 export const RemotionRoot = () => {
   return (

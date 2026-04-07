@@ -15,7 +15,10 @@ export const SaasPromo = ({
   const { fps, width, height } = useVideoConfig();
 
   const ctaDelay = fps * 1.2;
-  const ctaProgress = Math.min(Math.max((frame - ctaDelay) / (fps * 0.4), 0), 1);
+  const ctaProgress = Math.min(
+    Math.max((frame - ctaDelay) / (fps * 0.4), 0),
+    1,
+  );
 
   return (
     <div
@@ -38,7 +41,17 @@ export const SaasPromo = ({
         backgroundColor={backgroundColor}
       />
 
-      <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', gap: 16, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          textAlign: 'center',
+          gap: 16,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <AnimatedText
           text={productName}
           delay={0}

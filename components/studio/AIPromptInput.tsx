@@ -1,13 +1,14 @@
 'use client';
 import { useState } from 'react';
-import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
 import { useStudioStore } from '@/lib/store/studio';
 import { TEMPLATES } from '@/lib/templates';
 
 export const AIPromptInput = () => {
   const [prompt, setPrompt] = useState('');
-  const { templateId, setProps, isGenerating, setIsGenerating } = useStudioStore();
+  const { templateId, setProps, isGenerating, setIsGenerating } =
+    useStudioStore();
 
   const handleGenerate = async () => {
     if (!prompt.trim() || isGenerating) return;
@@ -51,15 +52,21 @@ export const AIPromptInput = () => {
 
   return (
     <div className="space-y-2">
-      <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+      <label
+        htmlFor="ai-prompt"
+        className="text-xs font-medium text-muted-foreground uppercase tracking-wider"
+      >
         ✦ Générer avec IA
       </label>
       <Textarea
+        id="ai-prompt"
         placeholder="Ex: 'Intro SaaS dark mode 15s pour une app de gestion de tâches'"
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
         className="text-xs min-h-16 resize-none"
-        onKeyDown={(e) => { if (e.key === 'Enter' && e.metaKey) handleGenerate(); }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && e.metaKey) handleGenerate();
+        }}
       />
       <Button
         onClick={handleGenerate}

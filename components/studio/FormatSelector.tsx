@@ -1,7 +1,7 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import { TEMPLATES, type VideoFormat } from '@/lib/templates';
 import { useStudioStore } from '@/lib/store/studio';
+import { TEMPLATES, type VideoFormat } from '@/lib/templates';
 
 const FORMAT_LABELS: Record<VideoFormat, { label: string; icon: string }> = {
   '16:9': { label: '16:9', icon: '▬' },
@@ -15,7 +15,9 @@ export const FormatSelector = () => {
 
   return (
     <div className="space-y-1.5">
-      <label className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Format</label>
+      <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        Format
+      </p>
       <div className="flex gap-2">
         {(Object.keys(FORMAT_LABELS) as VideoFormat[]).map((f) => {
           const isSupported = supportedFormats.includes(f);

@@ -2,8 +2,8 @@
 import { Player } from '@remotion/player';
 import { useStudioStore } from '@/lib/store/studio';
 import { FORMAT_DIMENSIONS, TEMPLATES } from '@/lib/templates';
-import { SaasPromo } from '@/remotion/compositions/saas-promo/SaasPromo';
 import { CourseIntro } from '@/remotion/compositions/course-intro/CourseIntro';
+import { SaasPromo } from '@/remotion/compositions/saas-promo/SaasPromo';
 import { SocialHook } from '@/remotion/compositions/social-hook/SocialHook';
 import { TextReveal } from '@/remotion/compositions/text-reveal/TextReveal';
 
@@ -25,7 +25,8 @@ export const PreviewPanel = () => {
     return result.success ? result.data : template.defaultProps;
   })();
 
-  const durationInSeconds = (validProps as { durationInSeconds?: number }).durationInSeconds ?? 15;
+  const durationInSeconds =
+    (validProps as { durationInSeconds?: number }).durationInSeconds ?? 15;
   const Component = COMPOSITION_MAP[templateId];
 
   return (

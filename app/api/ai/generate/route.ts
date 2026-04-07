@@ -1,12 +1,16 @@
 import { streamText } from 'ai';
+import { z } from 'zod';
 import { AI_MODEL } from '@/lib/ai/client';
 import { buildSystemPrompt, buildUserPrompt } from '@/lib/ai/prompts';
-import { TEMPLATES } from '@/lib/templates';
-import { z } from 'zod';
 
 const requestSchema = z.object({
   prompt: z.string().min(1).max(500),
-  templateId: z.enum(['saas-promo', 'course-intro', 'social-hook', 'text-reveal']),
+  templateId: z.enum([
+    'saas-promo',
+    'course-intro',
+    'social-hook',
+    'text-reveal',
+  ]),
 });
 
 export async function POST(req: Request) {

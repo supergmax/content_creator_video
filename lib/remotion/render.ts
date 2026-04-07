@@ -14,17 +14,26 @@ export function spawnRender(
   onProgress: (percent: number) => void,
 ): Promise<string> {
   return new Promise((resolve, reject) => {
-    const outputPath = path.join(process.cwd(), 'public', 'renders', `${job.outputName}.mp4`);
+    const outputPath = path.join(
+      process.cwd(),
+      'public',
+      'renders',
+      `${job.outputName}.mp4`,
+    );
     const propsJson = JSON.stringify(job.props);
 
-    const child = spawn('npx', [
-      'remotion',
-      'render',
-      'remotion/Root.tsx',
-      job.compositionId,
-      outputPath,
-      `--props=${propsJson}`,
-    ], { shell: true });
+    const child = spawn(
+      'npx',
+      [
+        'remotion',
+        'render',
+        'remotion/Root.tsx',
+        job.compositionId,
+        outputPath,
+        `--props=${propsJson}`,
+      ],
+      { shell: true },
+    );
 
     const parseProgress = (text: string) => {
       const match = text.match(/(\d+)%/);

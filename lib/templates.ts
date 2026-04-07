@@ -1,18 +1,25 @@
-import { saasPromoSchema, type SaasPromoProps } from '@/remotion/compositions/saas-promo/schema';
-import { courseIntroSchema, type CourseIntroProps } from '@/remotion/compositions/course-intro/schema';
-import { socialHookSchema, type SocialHookProps } from '@/remotion/compositions/social-hook/schema';
-import { textRevealSchema, type TextRevealProps } from '@/remotion/compositions/text-reveal/schema';
-import { z } from 'zod';
+import type { z } from 'zod';
+import { courseIntroSchema } from '@/remotion/compositions/course-intro/schema';
+import { saasPromoSchema } from '@/remotion/compositions/saas-promo/schema';
+import { socialHookSchema } from '@/remotion/compositions/social-hook/schema';
+import { textRevealSchema } from '@/remotion/compositions/text-reveal/schema';
 
 export type VideoFormat = '16:9' | '9:16' | '1:1';
 
-export const FORMAT_DIMENSIONS: Record<VideoFormat, { width: number; height: number }> = {
+export const FORMAT_DIMENSIONS: Record<
+  VideoFormat,
+  { width: number; height: number }
+> = {
   '16:9': { width: 1920, height: 1080 },
   '9:16': { width: 1080, height: 1920 },
   '1:1': { width: 1080, height: 1080 },
 };
 
-export type TemplateId = 'saas-promo' | 'course-intro' | 'social-hook' | 'text-reveal';
+export type TemplateId =
+  | 'saas-promo'
+  | 'course-intro'
+  | 'social-hook'
+  | 'text-reveal';
 
 export interface TemplateMeta {
   id: TemplateId;

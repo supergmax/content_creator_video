@@ -1,4 +1,4 @@
-import { useCurrentFrame, useVideoConfig, interpolate, spring } from 'remotion';
+import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 
 interface AnimatedTextProps {
   text: string;
@@ -26,9 +26,17 @@ export const AnimatedText = ({
     config: { damping: 12, stiffness: 100, mass: 0.5 },
   });
 
-  const opacity = interpolate(progress, [0, 1], [0, 1], { extrapolateRight: 'clamp' });
-  const translateY = style === 'slide-up' ? interpolate(progress, [0, 1], [30, 0], { extrapolateRight: 'clamp' }) : 0;
-  const scale = style === 'scale' ? interpolate(progress, [0, 1], [0.8, 1], { extrapolateRight: 'clamp' }) : 1;
+  const opacity = interpolate(progress, [0, 1], [0, 1], {
+    extrapolateRight: 'clamp',
+  });
+  const translateY =
+    style === 'slide-up'
+      ? interpolate(progress, [0, 1], [30, 0], { extrapolateRight: 'clamp' })
+      : 0;
+  const scale =
+    style === 'scale'
+      ? interpolate(progress, [0, 1], [0.8, 1], { extrapolateRight: 'clamp' })
+      : 1;
 
   return (
     <div

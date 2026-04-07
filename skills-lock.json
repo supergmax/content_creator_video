@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "add-sfx": {
+      "source": "remotion-dev/remotion",
+      "sourceType": "github",
+      "computedHash": "dd7cbb69a4208ece2405909aa15dab14d7cca04f29a7ba81aac6c8623dd0d5cb"
+    },
+    "remotion": {
+      "source": "google-labs-code/stitch-skills",
+      "sourceType": "github",
+      "computedHash": "b3c84d4942732bcd17b47de0a89f9561c460d718b81e0970521077e809d3b990"
+    },
+    "remotion-best-practices": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "computedHash": "6f22ccc0dd7103de270a465b30e44b001bcee4751e43197bba60680e69928635"
+    },
+    "remotion-render": {
+      "source": "inferen-sh/skills",
+      "sourceType": "github",
+      "computedHash": "1364c39b488438f2758ac0151d319efdc884768f6a2917edca7b14ce84ef7fe9"
+    }
+  }
+}
