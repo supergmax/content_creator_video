@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash:*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes --force)",
+      "Bash(npm --version)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx @biomejs/biome init)",
+      "Bash(npm run:*)",
+      "Bash(node -e \"const b = require\\('./node_modules/@biomejs/biome/package.json'\\); console.log\\(b.version\\);\")",
+      "Bash(node -e \"const s = require\\('./node_modules/@biomejs/biome/configuration_schema.json'\\); console.log\\(JSON.stringify\\(Object.keys\\(s.properties\\), null, 2\\)\\);\")",
+      "Bash(node -e \"const s = require\\('./node_modules/@biomejs/biome/configuration_schema.json'\\); console.log\\(JSON.stringify\\(s.properties.files, null, 2\\)\\);\")",
+      "Bash(node -e 'const s = require\\('\\\\''./node_modules/@biomejs/biome/configuration_schema.json'\\\\''\\); console.log\\(JSON.stringify\\(s['\\\\''$defs'\\\\'']['\\\\''FilesConfiguration'\\\\''], null, 2\\)\\);')",
+      "Bash(node -e 'const s = require\\('\\\\''./node_modules/@biomejs/biome/configuration_schema.json'\\\\''\\); const a = s['\\\\''$defs'\\\\'']['\\\\''AssistConfiguration'\\\\'']; console.log\\(JSON.stringify\\(a?.properties ? Object.keys\\(a.properties\\) : a, null, 2\\)\\);')",
+      "Bash(node -e 'const s = require\\('\\\\''./node_modules/@biomejs/biome/configuration_schema.json'\\\\''\\); const a = s['\\\\''$defs'\\\\'']['\\\\''AssistConfiguration'\\\\'']; console.log\\(JSON.stringify\\(a?.properties?.actions, null, 2\\)\\);')",
+      "Bash(node -e 'const s = require\\('\\\\''./node_modules/@biomejs/biome/configuration_schema.json'\\\\''\\); const a = s['\\\\''$defs'\\\\'']['\\\\''Actions'\\\\'']; console.log\\(JSON.stringify\\(a?.properties ? Object.keys\\(a.properties\\) : a, null, 2\\)\\);')",
+      "Bash(node -e 'const s = require\\('\\\\''./node_modules/@biomejs/biome/configuration_schema.json'\\\\''\\); const a = s['\\\\''$defs'\\\\'']['\\\\''Actions'\\\\'']; console.log\\(JSON.stringify\\(a?.properties?.source, null, 2\\)\\);')",
+      "Bash(node -e 'const s = require\\('\\\\''./node_modules/@biomejs/biome/configuration_schema.json'\\\\''\\); const a = s['\\\\''$defs'\\\\'']['\\\\''Source'\\\\'']; console.log\\(JSON.stringify\\(a?.properties ? Object.keys\\(a.properties\\) : a, null, 2\\)\\);')",
+      "Bash(npx shadcn@latest init -d)"
+    ]
+  }
+}

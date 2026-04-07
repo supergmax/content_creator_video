@@ -1,0 +1,115 @@
+<h2>Architecture technique</h2>
+<p class="subtitle">Stack, structure de fichiers, et flux de données du système complet.</p>
+
+<div class="section">
+  <span class="label">Stack</span>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px">
+    <div style="background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:10px">
+      <div style="color:#a855f7;font-size:11px;font-weight:700;margin-bottom:6px">FRONTEND</div>
+      <div style="color:#ccc;font-size:11px;line-height:1.8">
+        Next.js 15 (App Router)<br>
+        React 19<br>
+        shadcn/ui + Tailwind CSS v4<br>
+        Framer Motion 11 (UI animations)<br>
+        Zustand (état global du studio)<br>
+        21st.dev (composants premium)
+      </div>
+    </div>
+    <div style="background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:10px">
+      <div style="color:#38bdf8;font-size:11px;font-weight:700;margin-bottom:6px">VIDEO ENGINE</div>
+      <div style="color:#ccc;font-size:11px;line-height:1.8">
+        Remotion 4 (@remotion/player)<br>
+        @remotion/media-utils<br>
+        @remotion/noise<br>
+        Framer Motion (animations vidéo)<br>
+        ffmpeg (render local)<br>
+        @remotion/cli (render trigger)
+      </div>
+    </div>
+    <div style="background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:10px">
+      <div style="color:#22c55e;font-size:11px;font-weight:700;margin-bottom:6px">AI & BACKEND</div>
+      <div style="color:#ccc;font-size:11px;line-height:1.8">
+        Claude API (claude-sonnet-4-6)<br>
+        Vercel AI SDK (streaming)<br>
+        Server Actions + API Routes<br>
+        Zod (validation des props)<br>
+        Server-Sent Events (progress render)
+      </div>
+    </div>
+    <div style="background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:10px">
+      <div style="color:#f59e0b;font-size:11px;font-weight:700;margin-bottom:6px">TOOLING & ÉCOSYSTÈME</div>
+      <div style="color:#ccc;font-size:11px;line-height:1.8">
+        TypeScript strict<br>
+        Biome (lint + format)<br>
+        .claude/ (agents + skills + commands)<br>
+        .github/ (PR + issue templates)<br>
+        docs/ (ADR + ARCHITECTURE.md)
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Structure de fichiers</span>
+  <div style="background:#050505;border:1px solid #1a1a1a;border-radius:8px;padding:14px;margin-top:8px;font-family:'Courier New',monospace;font-size:10px;line-height:1.9;color:#888">
+    <span style="color:#a855f7">content_creator_video/</span><br>
+    ├── <span style="color:#38bdf8">.claude/</span>　　　　　　<span style="color:#444">← cerveau Claude local</span><br>
+    │　├── settings.json<br>
+    │　├── commands/　　　　<span style="color:#444">← /render, /new-template…</span><br>
+    │　├── skills/　　　　　<span style="color:#444">← remotion, framer, 21st.dev</span><br>
+    │　└── agents/　　　　　<span style="color:#444">← agent specs</span><br>
+    ├── <span style="color:#38bdf8">.github/</span><br>
+    │　├── PULL_REQUEST_TEMPLATE.md<br>
+    │　└── ISSUE_TEMPLATE/<br>
+    ├── <span style="color:#38bdf8">app/</span>　　　　　　　　　<span style="color:#444">← Next.js App Router</span><br>
+    │　├── (studio)/<br>
+    │　│　├── page.tsx　　　<span style="color:#444">← Dashboard</span><br>
+    │　│　└── editor/[id]/　<span style="color:#444">← Split-pane Editor</span><br>
+    │　├── renders/　　　　　<span style="color:#444">← historique</span><br>
+    │　└── api/<br>
+    │　　　├── render/　　　<span style="color:#444">← POST → spawn ffmpeg</span><br>
+    │　　　├── render/progress/ <span style="color:#444">← GET SSE stream</span><br>
+    │　　　└── ai/generate/　<span style="color:#444">← POST → Claude API</span><br>
+    ├── <span style="color:#a855f7">remotion/</span>　　　　　　<span style="color:#444">← compositions Remotion</span><br>
+    │　├── Root.tsx　　　　　<span style="color:#444">← registerRoot()</span><br>
+    │　├── compositions/<br>
+    │　│　├── saas-promo/　　<span style="color:#444">← SaaS product video</span><br>
+    │　│　├── course-intro/　<span style="color:#444">← cours/tutorial</span><br>
+    │　│　├── social-hook/　 <span style="color:#444">← TikTok/Reels hook</span><br>
+    │　│　└── text-reveal/　 <span style="color:#444">← typographie animée</span><br>
+    │　└── shared/　　　　　 <span style="color:#444">← composants partagés</span><br>
+    ├── <span style="color:#38bdf8">components/</span>　　　　　<span style="color:#444">← shadcn + UI custom</span><br>
+    ├── <span style="color:#38bdf8">lib/</span>　　　　　　　　　<span style="color:#444">← utils, AI client, schemas</span><br>
+    ├── <span style="color:#38bdf8">docs/</span> ADR/ ARCHITECTURE.md<br>
+    ├── CLAUDE.md　STATE.md　TODO.md<br>
+    └── README.md　ROADMAP.md　CHANGELOG.md
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Flux de données — Render Pipeline</span>
+  <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:8px;font-size:10px">
+    <div style="background:#1a0a2e;color:#a855f7;padding:6px 10px;border-radius:6px;border:1px solid #a855f740">1. User clique Render</div>
+    <span style="color:#444">→</span>
+    <div style="background:#0d1a2e;color:#38bdf8;padding:6px 10px;border-radius:6px;border:1px solid #38bdf840">2. POST /api/render<br><span style="color:#555">{compositionId, props, format}</span></div>
+    <span style="color:#444">→</span>
+    <div style="background:#0d1a0d;color:#22c55e;padding:6px 10px;border-radius:6px;border:1px solid #22c55e40">3. spawn npx remotion render<br><span style="color:#555">child_process</span></div>
+    <span style="color:#444">→</span>
+    <div style="background:#1a1000;color:#f59e0b;padding:6px 10px;border-radius:6px;border:1px solid #f59e0b40">4. SSE progress stream<br><span style="color:#555">GET /api/render/progress</span></div>
+    <span style="color:#444">→</span>
+    <div style="background:#1a0a2e;color:#a855f7;padding:6px 10px;border-radius:6px;border:1px solid #a855f740">5. MP4 → /public/renders/<br><span style="color:#555">+ download link</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Flux AI — Génération de composition</span>
+  <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:8px;font-size:10px">
+    <div style="background:#1a0a2e;color:#a855f7;padding:6px 10px;border-radius:6px;border:1px solid #a855f740">1. User décrit la vidéo<br><span style="color:#555">"Intro SaaS dark 15s"</span></div>
+    <span style="color:#444">→</span>
+    <div style="background:#0d1a2e;color:#38bdf8;padding:6px 10px;border-radius:6px;border:1px solid #38bdf840">2. POST /api/ai/generate<br><span style="color:#555">streaming response</span></div>
+    <span style="color:#444">→</span>
+    <div style="background:#0d1a0d;color:#22c55e;padding:6px 10px;border-radius:6px;border:1px solid #22c55e40">3. Claude → JSON props<br><span style="color:#555">{template, titre, couleurs…}</span></div>
+    <span style="color:#444">→</span>
+    <div style="background:#1a0a2e;color:#a855f7;padding:6px 10px;border-radius:6px;border:1px solid #a855f740">4. Preview live mis à jour<br><span style="color:#555">Remotion Player re-render</span></div>
+  </div>
+</div>

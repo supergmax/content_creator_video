@@ -1,0 +1,40 @@
+<h2>Architecture — 3 approches</h2>
+<p class="subtitle">Choisir la structure du système. Ma recommandation est <strong>A</strong>.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Video Studio App</h3>
+      <p><strong>Recommandé</strong> — Next.js 15 App Router + Remotion Player embarqué. Interface split-pane : panneau gauche (controls/IA), panneau droit (preview live). Templates organisés par type dans <code>/remotion/compositions</code>. Render déclenché par Server Action. shadcn/ui + Framer Motion pour l'UI.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pour</h4><ul><li>Une seule app, un seul <code>npm run dev</code></li><li>Preview live dans le navigateur</li><li>DX fluide, pas de switch de port</li></ul></div>
+        <div class="cons"><h4>Contre</h4><ul><li>Next.js + Remotion dans le même bundle = config webpack/turbopack à soigner</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Studio + Remotion Studio parallèle</h3>
+      <p>Next.js sur <code>:3000</code> pour l'UI + <code>npx remotion studio</code> sur <code>:3001</code> pour le preview. Next.js trigger les renders via API route, Remotion Studio reste pour le debug de compositions.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pour</h4><ul><li>Remotion Studio officiel = meilleur DX pour écrire des compositions</li><li>Séparation claire UI / compositions</li></ul></div>
+        <div class="cons"><h4>Contre</h4><ul><li>2 serveurs à lancer</li><li>Expérience utilisateur final fragmentée</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Next.js léger + Remotion CLI only</h3>
+      <p>Next.js pour le dashboard et la gestion de projets vidéo (JSON configs). Pas de preview live dans le browser — on ouvre Remotion Studio à la demande. Render via <code>npx remotion render</code> depuis un terminal ou un bouton qui appelle un script.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pour</h4><ul><li>Plus simple à configurer</li><li>Pas de conflit de bundler</li></ul></div>
+        <div class="cons"><h4>Contre</h4><ul><li>Pas de preview intégré = friction élevée</li><li>Expérience "studio" dégradée</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
