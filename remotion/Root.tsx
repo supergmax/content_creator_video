@@ -1,4 +1,4 @@
-import { Composition } from 'remotion';
+import { Composition, registerRoot } from 'remotion';
 import { CourseIntro } from './compositions/course-intro/CourseIntro';
 import { courseIntroSchema } from './compositions/course-intro/schema';
 import { SaasPromo } from './compositions/saas-promo/SaasPromo';
@@ -8,7 +8,7 @@ import { socialHookSchema } from './compositions/social-hook/schema';
 import { textRevealSchema } from './compositions/text-reveal/schema';
 import { TextReveal } from './compositions/text-reveal/TextReveal';
 
-export const RemotionRoot = () => {
+const RemotionRoot = () => {
   return (
     <>
       <Composition
@@ -66,3 +66,5 @@ export const RemotionRoot = () => {
     </>
   );
 };
+
+registerRoot(RemotionRoot);

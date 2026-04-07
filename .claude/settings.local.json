@@ -60,7 +60,11 @@
       "Bash(mkdir:*)",
       "Bash(claude:*)",
       "Bash(head -50 \"C:\\\\Users\\\\gmax9\\\\OneDrive\\\\Bureau\\\\stellarPulse\\\\content_creator_video\\\\.next\\\\static\\\\css\\\\app\"/*.css)",
-      "Bash(curl -s http://localhost:3000)"
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(where ffmpeg:*)",
+      "Bash(cmd.exe /c \"where ffmpeg\")",
+      "Bash(powershell.exe -Command \"Get-Command ffmpeg -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(npx remotion:*)"
     ]
   }
 }
