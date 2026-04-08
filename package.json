@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "remotion:studio": "npx remotion studio remotion/Root.tsx",
-    "remotion:render": "npx remotion render",
+    "remotion:render": "npx remotion render remotion/Root.tsx",
     "lint": "npx @biomejs/biome check .",
     "lint:fix": "npx @biomejs/biome check --write .",
     "type-check": "tsc --noEmit"

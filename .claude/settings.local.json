@@ -67,7 +67,8 @@
       "Bash(npx remotion:*)",
       "Bash(grep -E \"\\\\.md$|\\\\.ts$|\\\\.json$\")",
       "Bash(mkdir -p /c/Users/gmax9/OneDrive/Bureau/stellarPulse/content_creator_video/public/audio)",
-      "Bash(cp \"/c/Users/gmax9/OneDrive/Bureau/stellarPulse/content_creator_video/MONTAGEM ALQUIMIA.mp3\" /c/Users/gmax9/OneDrive/Bureau/stellarPulse/content_creator_video/public/audio/alquimia.mp3)"
+      "Bash(cp \"/c/Users/gmax9/OneDrive/Bureau/stellarPulse/content_creator_video/MONTAGEM ALQUIMIA.mp3\" /c/Users/gmax9/OneDrive/Bureau/stellarPulse/content_creator_video/public/audio/alquimia.mp3)",
+      "Bash(node -e \"const m = require\\('@remotion/media-utils'\\); console.log\\(Object.keys\\(m\\)\\)\")"
     ]
   }
 }
