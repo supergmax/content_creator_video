@@ -6,7 +6,8 @@ export const socialHookSchema = z.object({
   accentColor: z.string().default('#f59e0b'),
   backgroundColor: z.string().default('#050505'),
   textColor: z.string().default('#ffffff'),
-  durationInSeconds: z.number().min(3).max(30).default(7),
+  durationInSeconds: z.number().min(3).max(60).default(7),
+  audioSrc: z.string().optional(),
 });
 
 export type SocialHookProps = z.infer<typeof socialHookSchema>;

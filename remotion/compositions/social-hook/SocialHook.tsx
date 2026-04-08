@@ -1,4 +1,4 @@
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
+import { Audio, interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
 import { BackgroundGradient } from '@/remotion/shared/BackgroundGradient';
 import type { SocialHookProps } from './schema';
 
@@ -56,6 +56,7 @@ export const SocialHook = ({
   accentColor,
   backgroundColor,
   textColor,
+  audioSrc,
 }: SocialHookProps) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
@@ -118,6 +119,9 @@ export const SocialHook = ({
         justifyContent: 'center',
       }}
     >
+      {/* Audio optionnel */}
+      {audioSrc && <Audio src={audioSrc} />}
+
       {/* Fond gradient animé */}
       <BackgroundGradient
         color1={accentColor}

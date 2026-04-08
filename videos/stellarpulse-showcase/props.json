@@ -1,0 +1,9 @@
+{
+  "hookText": "Build. Preview. Render.",
+  "subText": "Next.js · Remotion · Claude Code ✦",
+  "accentColor": "#7c3aed",
+  "backgroundColor": "#050505",
+  "textColor": "#ffffff",
+  "durationInSeconds": 20,
+  "audioSrc": "/audio/alquimia.mp3"
+}

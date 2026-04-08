@@ -65,7 +65,9 @@
       "Bash(cmd.exe /c \"where ffmpeg\")",
       "Bash(powershell.exe -Command \"Get-Command ffmpeg -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
       "Bash(npx remotion:*)",
-      "Bash(grep -E \"\\\\.md$|\\\\.ts$|\\\\.json$\")"
+      "Bash(grep -E \"\\\\.md$|\\\\.ts$|\\\\.json$\")",
+      "Bash(mkdir -p /c/Users/gmax9/OneDrive/Bureau/stellarPulse/content_creator_video/public/audio)",
+      "Bash(cp \"/c/Users/gmax9/OneDrive/Bureau/stellarPulse/content_creator_video/MONTAGEM ALQUIMIA.mp3\" /c/Users/gmax9/OneDrive/Bureau/stellarPulse/content_creator_video/public/audio/alquimia.mp3)"
     ]
   }
 }
