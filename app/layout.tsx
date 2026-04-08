@@ -1,25 +1,22 @@
-import type { Metadata } from 'next';
-import { Geist, Inter } from 'next/font/google';
-import './globals.css';
-import { cn } from '@/lib/utils';
+import type { Metadata } from 'next'
+import { Geist } from 'next/font/google'
+import './globals.css'
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
-
-const inter = Inter({ subsets: ['latin'] });
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
-  title: 'StellarPulse Studio',
-  description: 'Professional video creation for social media',
-};
+  title: 'StellarPulse',
+  description: 'Studio de création vidéo local',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className={cn('dark', 'font-sans', geist.variable)}>
-      <body className={inter.className}>{children}</body>
+    <html lang="fr" className={`dark ${geist.variable} font-sans`}>
+      <body>{children}</body>
     </html>
-  );
+  )
 }
