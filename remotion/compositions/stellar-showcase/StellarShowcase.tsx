@@ -158,12 +158,12 @@ const SceneIntro = ({ viz }: SceneProps) => {
 };
 
 // ---------------------------------------------------------------------------
-// Scene 2 — Tagline (180 frames / 6s)
+// Scene 2 — Tagline (150 frames / 5s)
 // ---------------------------------------------------------------------------
 const SceneTagline = ({ viz }: SceneProps) => {
   const frame = useCurrentFrame();
   const bass = viz[0];
-  const opacity = sceneOpacity(frame, 180);
+  const opacity = sceneOpacity(frame, 150);
 
   // Bass overlay
   const bassOpacity = bass * 0.3 + 0.05;
@@ -380,7 +380,350 @@ const SceneTech = ({ viz }: SceneProps) => {
 };
 
 // ---------------------------------------------------------------------------
-// Scene 4 — Workflow (210 frames / 7s)
+// Scene 4 — Architecture (180 frames / 6s)
+// ---------------------------------------------------------------------------
+interface ArchCardProps {
+  icon: string;
+  title: string;
+  lines: string[];
+  color: string;
+  delay: number;
+  index: number;
+}
+
+const ArchCard = ({ icon, title, lines, color, delay, index }: ArchCardProps) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  const progress = spring({
+    frame: frame - delay,
+    fps,
+    config: { damping: 14, stiffness: 130 },
+  });
+
+  const opacity = interpolate(progress, [0, 1], [0, 1], { extrapolateRight: 'clamp' });
+  const isLeft = index % 2 === 0;
+  const translateX = interpolate(progress, [0, 1], [isLeft ? -60 : 60, 0], {
+    extrapolateRight: 'clamp',
+  });
+
+  return (
+    <div
+      style={{
+        opacity,
+        transform: `translateX(${translateX}px)`,
+        background: 'rgba(255,255,255,0.05)',
+        border: `1px solid ${color}4d`,
+        borderRadius: 16,
+        padding: '24px 28px',
+        width: '85%',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 10,
+      }}
+    >
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+        <span style={{ fontSize: 28, color }}>{icon}</span>
+        <span
+          style={{
+            fontSize: 26,
+            fontWeight: 700,
+            color: WHITE,
+            fontFamily: 'Inter, system-ui, sans-serif',
+          }}
+        >
+          {title}
+        </span>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+        {lines.map((line) => (
+          <div key={line} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <span
+              style={{
+                fontSize: 19,
+                color,
+                fontFamily: 'monospace',
+                flexShrink: 0,
+              }}
+            >
+              →
+            </span>
+            <span
+              style={{
+                fontSize: 19,
+                color: 'rgba(255,255,255,0.55)',
+                fontFamily: 'monospace',
+              }}
+            >
+              {line}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const archCards = [
+  {
+    icon: '▲',
+    title: 'Next.js 15 App Router',
+    lines: ['app/page.tsx', 'app/video/[name]/', 'api/render — SSE', 'api/videos — filesystem'],
+    color: WHITE,
+    delay: 20,
+  },
+  {
+    icon: '◉',
+    title: 'Remotion 4',
+    lines: ['remotion/Root.tsx', 'compositions/ (4 templates)', 'schema Zod par template', 'Player + CLI render'],
+    color: GREEN,
+    delay: 70,
+  },
+  {
+    icon: '✦',
+    title: 'Claude Code Skills',
+    lines: ['.claude/commands/', '/new-video — interactif', '/generate-props — IA', 'remotion-best-practices'],
+    color: AMBER,
+    delay: 120,
+  },
+];
+
+const SceneArchitecture = ({ viz: _viz }: SceneProps) => {
+  const frame = useCurrentFrame();
+  const opacity = sceneOpacity(frame, 180);
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        opacity,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '60px 48px',
+        gap: 20,
+      }}
+    >
+      <BackgroundGradient color1={AMBER} color2={VIOLET} animated />
+
+      {/* Title */}
+      <div style={{ textAlign: 'center', marginBottom: 8, width: '85%' }}>
+        <AnimatedText
+          text="L'Architecture"
+          delay={0}
+          color="rgba(255,255,255,0.5)"
+          fontSize={44}
+          fontWeight={800}
+          style="fade"
+        />
+      </div>
+
+      {/* Cards */}
+      {archCards.map((card, i) => (
+        <ArchCard
+          key={card.title}
+          icon={card.icon}
+          title={card.title}
+          lines={card.lines}
+          color={card.color}
+          delay={card.delay}
+          index={i}
+        />
+      ))}
+    </div>
+  );
+};
+
+// ---------------------------------------------------------------------------
+// Scene 5 — How It Works (180 frames / 6s)
+// ---------------------------------------------------------------------------
+interface HowItWorksPillarProps {
+  badge: string;
+  badgeColor: string;
+  icon: string;
+  title: string;
+  titleColor: string;
+  desc: string;
+  delay: number;
+}
+
+const HowItWorksPillar = ({ badge, badgeColor, icon, title, titleColor, desc, delay }: HowItWorksPillarProps) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  const progress = spring({
+    frame: frame - delay,
+    fps,
+    config: { damping: 14, stiffness: 120 },
+  });
+
+  const opacity = interpolate(progress, [0, 1], [0, 1], { extrapolateRight: 'clamp' });
+  const translateY = interpolate(progress, [0, 1], [40, 0], { extrapolateRight: 'clamp' });
+
+  return (
+    <div
+      style={{
+        opacity,
+        transform: `translateY(${translateY}px)`,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 24,
+        textAlign: 'center',
+        flex: 1,
+      }}
+    >
+      {/* Number badge */}
+      <div
+        style={{
+          width: 80,
+          height: 80,
+          borderRadius: '50%',
+          background: badgeColor,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <span
+          style={{
+            fontSize: 28,
+            fontWeight: 900,
+            color: WHITE,
+            fontFamily: 'Inter, system-ui, sans-serif',
+          }}
+        >
+          {badge}
+        </span>
+      </div>
+
+      {/* Icon */}
+      <span style={{ fontSize: 80 }}>{icon}</span>
+
+      {/* Title */}
+      <span
+        style={{
+          fontSize: 40,
+          fontWeight: 900,
+          color: titleColor,
+          letterSpacing: '0.1em',
+          fontFamily: 'Inter, system-ui, sans-serif',
+        }}
+      >
+        {title}
+      </span>
+
+      {/* Description */}
+      <span
+        style={{
+          fontSize: 22,
+          color: 'rgba(255,255,255,0.6)',
+          fontFamily: 'Inter, system-ui, sans-serif',
+          maxWidth: 500,
+          lineHeight: 1.5,
+        }}
+      >
+        {desc}
+      </span>
+    </div>
+  );
+};
+
+const howItWorksPillars = [
+  {
+    badge: '01',
+    badgeColor: VIOLET,
+    icon: '📝',
+    title: 'ÉCRIRE',
+    titleColor: AMBER,
+    desc: 'Une description Markdown qui guide la génération',
+    delay: 20,
+  },
+  {
+    badge: '02',
+    badgeColor: PINK,
+    icon: '🤖',
+    title: 'GÉNÉRER',
+    titleColor: PINK,
+    desc: 'Claude Code crée les props JSON automatiquement',
+    delay: 70,
+  },
+  {
+    badge: '03',
+    badgeColor: GREEN,
+    icon: '🎬',
+    title: 'RENDRE',
+    titleColor: GREEN,
+    desc: 'Preview live → Render local → Download MP4',
+    delay: 120,
+  },
+];
+
+const SceneHowItWorks = ({ viz: _viz }: SceneProps) => {
+  const frame = useCurrentFrame();
+  const opacity = sceneOpacity(frame, 180);
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        opacity,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '60px 40px',
+        gap: 40,
+      }}
+    >
+      <BackgroundGradient color1={CYAN} color2={VIOLET} animated />
+
+      {/* Title */}
+      <div style={{ textAlign: 'center' }}>
+        <AnimatedText
+          text="Comment ça marche"
+          delay={0}
+          color={WHITE}
+          fontSize={52}
+          fontWeight={900}
+          style="slide-up"
+        />
+      </div>
+
+      {/* Pillars row */}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 24,
+          width: '100%',
+          padding: '0 40px',
+        }}
+      >
+        {howItWorksPillars.map((pillar) => (
+          <HowItWorksPillar
+            key={pillar.badge}
+            badge={pillar.badge}
+            badgeColor={pillar.badgeColor}
+            icon={pillar.icon}
+            title={pillar.title}
+            titleColor={pillar.titleColor}
+            desc={pillar.desc}
+            delay={pillar.delay}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ---------------------------------------------------------------------------
+// Scene 6 — Workflow (180 frames / 6s)
 // ---------------------------------------------------------------------------
 const workflowSteps = [
   {
@@ -490,7 +833,7 @@ const ConnectorLine = ({ delay }: ConnectorLineProps) => {
 
 const SceneWorkflow = ({ viz: _viz }: SceneProps) => {
   const frame = useCurrentFrame();
-  const opacity = sceneOpacity(frame, 210);
+  const opacity = sceneOpacity(frame, 180);
 
   return (
     <div
@@ -511,7 +854,7 @@ const SceneWorkflow = ({ viz: _viz }: SceneProps) => {
       {/* Title */}
       <div style={{ textAlign: 'center', marginBottom: 40 }}>
         <AnimatedText
-          text="Comment ça marche"
+          text="Le Workflow"
           delay={0}
           color="rgba(255,255,255,0.6)"
           fontSize={44}
@@ -555,7 +898,197 @@ const SceneWorkflow = ({ viz: _viz }: SceneProps) => {
 };
 
 // ---------------------------------------------------------------------------
-// Scene 5 — Skills (210 frames / 7s)
+// Scene 7 — How To Use It (210 frames / 7s)
+// ---------------------------------------------------------------------------
+interface HowToUseStepProps {
+  number: string;
+  title: string;
+  desc: string;
+  command: string;
+  color: string;
+  delay: number;
+}
+
+const HowToUseStep = ({ number, title, desc, command, color, delay }: HowToUseStepProps) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  const progress = spring({
+    frame: frame - delay,
+    fps,
+    config: { damping: 15, stiffness: 140 },
+  });
+
+  const opacity = interpolate(progress, [0, 1], [0, 1], { extrapolateRight: 'clamp' });
+  const translateX = interpolate(progress, [0, 1], [-50, 0], { extrapolateRight: 'clamp' });
+
+  return (
+    <div
+      style={{
+        opacity,
+        transform: `translateX(${translateX}px)`,
+        background: 'rgba(255,255,255,0.04)',
+        border: `1px solid ${color}59`,
+        borderRadius: 20,
+        padding: '28px 32px',
+        width: '85%',
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 24,
+        alignItems: 'flex-start',
+      }}
+    >
+      {/* Number badge */}
+      <div
+        style={{
+          width: 60,
+          height: 60,
+          borderRadius: '50%',
+          background: `${color}33`,
+          border: `2px solid ${color}80`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexShrink: 0,
+        }}
+      >
+        <span
+          style={{
+            fontSize: 22,
+            fontWeight: 900,
+            color,
+            fontFamily: 'Inter, system-ui, sans-serif',
+          }}
+        >
+          {number}
+        </span>
+      </div>
+
+      {/* Content */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1 }}>
+        <span
+          style={{
+            fontSize: 28,
+            fontWeight: 800,
+            color: WHITE,
+            fontFamily: 'Inter, system-ui, sans-serif',
+          }}
+        >
+          {title}
+        </span>
+        <span
+          style={{
+            fontSize: 20,
+            color: 'rgba(255,255,255,0.6)',
+            fontFamily: 'Inter, system-ui, sans-serif',
+            lineHeight: 1.5,
+          }}
+        >
+          {desc}
+        </span>
+        {/* Command pill */}
+        <div
+          style={{
+            background: `${color}26`,
+            border: `1px solid ${color}4d`,
+            borderRadius: 8,
+            padding: '6px 16px',
+            display: 'inline-block',
+            width: 'fit-content',
+          }}
+        >
+          <span
+            style={{
+              fontSize: 18,
+              fontFamily: 'monospace',
+              color,
+            }}
+          >
+            {command}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const howToUseSteps = [
+  {
+    number: '01',
+    title: 'Lance /new-video',
+    desc: 'Claude Code te guide : nom, template, contenu. Il génère description.md + props.json automatiquement.',
+    command: '/new-video',
+    color: VIOLET,
+    delay: 20,
+  },
+  {
+    number: '02',
+    title: 'Preview dans le browser',
+    desc: 'Ouvre localhost:3000 — preview live avec @remotion/player. Vois ta vidéo avant de rendre.',
+    command: 'localhost:3000',
+    color: CYAN,
+    delay: 80,
+  },
+  {
+    number: '03',
+    title: 'Render & Download',
+    desc: 'Clic sur Render — SSE progress en direct. Output.mp4 prêt à télécharger.',
+    command: 'output.mp4 ↓',
+    color: GREEN,
+    delay: 140,
+  },
+];
+
+const SceneHowToUse = ({ viz: _viz }: SceneProps) => {
+  const frame = useCurrentFrame();
+  const opacity = sceneOpacity(frame, 210);
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        opacity,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '60px 48px',
+        gap: 20,
+      }}
+    >
+      <BackgroundGradient color1={GREEN} color2={VIOLET} animated />
+
+      {/* Title */}
+      <div style={{ textAlign: 'center', marginBottom: 8, width: '85%' }}>
+        <AnimatedText
+          text="Comment l'utiliser"
+          delay={0}
+          color="rgba(255,255,255,0.5)"
+          fontSize={44}
+          fontWeight={800}
+          style="fade"
+        />
+      </div>
+
+      {/* Steps */}
+      {howToUseSteps.map((step) => (
+        <HowToUseStep
+          key={step.number}
+          number={step.number}
+          title={step.title}
+          desc={step.desc}
+          command={step.command}
+          color={step.color}
+          delay={step.delay}
+        />
+      ))}
+    </div>
+  );
+};
+
+// ---------------------------------------------------------------------------
+// Scene 8 — Skills (180 frames / 6s)
 // ---------------------------------------------------------------------------
 const skillCommands = [
   { cmd: '/new-video', desc: 'Créer une vidéo complète', color: VIOLET, delay: 20 },
@@ -636,7 +1169,7 @@ const SkillRow = ({ cmd, desc, color, delay }: SkillRowProps) => {
 
 const SceneSkills = ({ viz: _viz }: SceneProps) => {
   const frame = useCurrentFrame();
-  const opacity = sceneOpacity(frame, 210);
+  const opacity = sceneOpacity(frame, 180);
 
   return (
     <div
@@ -693,7 +1226,7 @@ const SceneSkills = ({ viz: _viz }: SceneProps) => {
 };
 
 // ---------------------------------------------------------------------------
-// Scene 6 — Outro (300 frames / 10s)
+// Scene 9 — Outro (240 frames / 8s)
 // ---------------------------------------------------------------------------
 const outroBadges = [
   { label: '4 Templates', icon: '🎬', color: VIOLET, delay: 10 },
@@ -757,13 +1290,14 @@ const SceneOutro = ({ viz }: SceneProps) => {
   const { fps } = useVideoConfig();
   const bass = viz[0];
 
-  // Phase timings
+  // Phase timings (adjusted for 240 frames)
+  // badges: 0–120
   const badgesOpacity = interpolate(frame, [0, 10, 110, 120], [0, 1, 1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Phase 2: wordmark
+  // Phase 2: wordmark 120–200
   const wordmarkProgress = spring({
     frame: frame - 120,
     fps,
@@ -776,24 +1310,24 @@ const SceneOutro = ({ viz }: SceneProps) => {
     extrapolateRight: 'clamp',
   });
 
-  // Hide wordmark at phase 3
-  const wordmarkFadeOut = interpolate(frame, [240, 280], [1, 0], {
+  // Hide wordmark at 200–240
+  const wordmarkFadeOut = interpolate(frame, [200, 240], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Phase 3: burst radial expands
-  const burstRadius = interpolate(frame, [240, 300], [0, 150], {
+  // Phase 3: burst 200–240
+  const burstRadius = interpolate(frame, [200, 240], [0, 150], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const burstOpacity = interpolate(frame, [240, 270, 285, 300], [0, 0.7, 0.5, 0], {
+  const burstOpacity = interpolate(frame, [200, 220, 230, 240], [0, 0.7, 0.5, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Final fade to black
-  const finalFade = interpolate(frame, [280, 300], [0, 1], {
+  // Final fade to black 220–240
+  const finalFade = interpolate(frame, [220, 240], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -983,33 +1517,48 @@ export const StellarShowcase = ({ audioSrc, durationInSeconds: _durationInSecond
         }}
       />
 
-      {/* Scene 1 — Intro Hook */}
+      {/* Scene 1 — Intro Hook (0–90 / 3s) */}
       <Sequence from={0} durationInFrames={90}>
         <SceneIntro viz={viz} />
       </Sequence>
 
-      {/* Scene 2 — Tagline */}
-      <Sequence from={90} durationInFrames={180}>
+      {/* Scene 2 — Tagline (90–240 / 5s) */}
+      <Sequence from={90} durationInFrames={150}>
         <SceneTagline viz={viz} />
       </Sequence>
 
-      {/* Scene 3 — Tech Stack */}
-      <Sequence from={270} durationInFrames={210}>
+      {/* Scene 3 — How We Build It: Tech Stack (240–450 / 7s) */}
+      <Sequence from={240} durationInFrames={210}>
         <SceneTech viz={viz} />
       </Sequence>
 
-      {/* Scene 4 — Workflow */}
-      <Sequence from={480} durationInFrames={210}>
+      {/* Scene 4 — How We Build It: Architecture (450–630 / 6s) */}
+      <Sequence from={450} durationInFrames={180}>
+        <SceneArchitecture viz={viz} />
+      </Sequence>
+
+      {/* Scene 5 — How It Works: Concept (630–810 / 6s) */}
+      <Sequence from={630} durationInFrames={180}>
+        <SceneHowItWorks viz={viz} />
+      </Sequence>
+
+      {/* Scene 6 — How It Works: Workflow (810–990 / 6s) */}
+      <Sequence from={810} durationInFrames={180}>
         <SceneWorkflow viz={viz} />
       </Sequence>
 
-      {/* Scene 5 — Skills */}
-      <Sequence from={690} durationInFrames={210}>
+      {/* Scene 7 — How To Use It (990–1200 / 7s) */}
+      <Sequence from={990} durationInFrames={210}>
+        <SceneHowToUse viz={viz} />
+      </Sequence>
+
+      {/* Scene 8 — Skills (1200–1380 / 6s) */}
+      <Sequence from={1200} durationInFrames={180}>
         <SceneSkills viz={viz} />
       </Sequence>
 
-      {/* Scene 6 — Outro */}
-      <Sequence from={900} durationInFrames={300}>
+      {/* Scene 9 — Outro (1380–1620 / 8s) */}
+      <Sequence from={1380} durationInFrames={240}>
         <SceneOutro viz={viz} />
       </Sequence>
     </div>
