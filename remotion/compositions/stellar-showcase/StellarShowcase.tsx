@@ -1,6 +1,7 @@
 import {
   Audio,
   Sequence,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
   spring,
@@ -1473,8 +1474,11 @@ export const StellarShowcase = ({ audioSrc, durationInSeconds: _durationInSecond
   const { fps, width, height } = useVideoConfig();
   const frame = useCurrentFrame();
 
+  // Resolve audio path via staticFile so Remotion CLI bundler can find it
+  const resolvedAudio = audioSrc ? staticFile(audioSrc.replace(/^\//, '')) : '';
+
   // Audio visualization — called once in root, passed to all scenes
-  const audioData = useAudioData(audioSrc);
+  const audioData = useAudioData(resolvedAudio);
   const viz: number[] = audioData
     ? visualizeAudio({
         fps,
@@ -1504,7 +1508,7 @@ export const StellarShowcase = ({ audioSrc, durationInSeconds: _durationInSecond
       }}
     >
       {/* Audio track */}
-      {audioSrc && <Audio src={audioSrc} />}
+      {resolvedAudio && <Audio src={resolvedAudio} />}
 
       {/* Global bass-reactive flash overlay */}
       <div

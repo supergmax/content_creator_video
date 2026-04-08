@@ -6,6 +6,7 @@ import { SocialHook } from '@/remotion/compositions/social-hook/SocialHook'
 import { TextReveal } from '@/remotion/compositions/text-reveal/TextReveal'
 import { CourseIntro } from '@/remotion/compositions/course-intro/CourseIntro'
 import { SaasPromo } from '@/remotion/compositions/saas-promo/SaasPromo'
+import { StellarShowcase } from '@/remotion/compositions/stellar-showcase/StellarShowcase'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const COMPOSITIONS: Record<string, ComponentType<any>> = {
@@ -13,6 +14,7 @@ const COMPOSITIONS: Record<string, ComponentType<any>> = {
   'text-reveal': TextReveal,
   'course-intro': CourseIntro,
   'saas-promo': SaasPromo,
+  'stellar-showcase': StellarShowcase,
 }
 
 const FORMAT_SIZES: Record<string, { width: number; height: number }> = {
