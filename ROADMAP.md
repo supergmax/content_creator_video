@@ -1,29 +1,21 @@
-# ROADMAP.md — StellarPulse Video Creator
+# ROADMAP — StellarPulse
 
-## v1.0 — Studio local ✓ (2026-04-07)
-- [x] Infrastructure Next.js 15 + Remotion 4 + TypeScript strict
-- [x] 4 templates Remotion (SaaS Promo · Course Intro · Social Hook · Text Reveal)
-- [x] 3 formats de sortie (16:9 · 9:16 · 1:1)
-- [x] Preview live avec @remotion/player
-- [x] Génération IA via Claude Code subprocess (sans clé API)
-- [x] Render MP4 local via Remotion CLI + ffmpeg
-- [x] SSE progress bar + historique des rendus
-- [x] Écosystème Claude Code complet (7 skills + commandes)
+## V1 — Done ✓
+- [x] 4 compositions Remotion (social-hook, text-reveal, course-intro, saas-promo)
+- [x] Workflow description.md → props.json → render MP4
+- [x] Page liste des vidéos (filesystem pur)
+- [x] Preview @remotion/player
+- [x] Render SSE + téléchargement MP4
+- [x] Skills /new-video et /generate-props
 
-## v1.1 — Améliorations UX
-- [ ] Slider de durée dans le ControlPanel
-- [ ] Bouton "Copier les props JSON"
-- [ ] Preview vidéo inline dans `/renders`
-- [ ] Composant `AudioTrack` partagé (musique de fond)
-- [ ] Persistance des projets en JSON local (`~/.stellarpulse/projects/`)
+## V2 — Éditeur UI inline
+- [ ] Modifier les props directement dans l'interface (sliders, champs texte)
+- [ ] Pas besoin d'éditer props.json manuellement
+- [ ] Champs générés dynamiquement depuis le schéma Zod de chaque composition
+- [ ] Sauvegarde auto dans videos/<nom>/props.json
+- [ ] Hot-reload du Player à chaque changement
 
-## v2.0 — Rendu cloud
-- [ ] Remotion Lambda (AWS) pour le rendu parallélisé
-- [ ] Queue de rendus avec statuts
-- [ ] Stockage S3 des MP4
-
-## v3.0 — Collaboration & Marketplace
-- [ ] Auth multi-utilisateurs
-- [ ] Bibliothèque de templates communautaires
-- [ ] Upload direct vers YouTube / TikTok / LinkedIn
-- [ ] Éditeur de timeline drag & drop
+## V3 — Idées futures
+- [ ] Export GIF
+- [ ] Soundtrack / SFX via @remotion/media-utils
+- [ ] Templates communautaires
