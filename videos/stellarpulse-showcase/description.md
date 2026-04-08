@@ -1,6 +1,6 @@
 ---
-template: social-hook
-duration: 20
+template: stellar-showcase
+duration: 40
 format: 9x16
 ---
 

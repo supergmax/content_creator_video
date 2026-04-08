@@ -7,6 +7,8 @@ import { SocialHook } from './compositions/social-hook/SocialHook';
 import { socialHookSchema } from './compositions/social-hook/schema';
 import { textRevealSchema } from './compositions/text-reveal/schema';
 import { TextReveal } from './compositions/text-reveal/TextReveal';
+import { StellarShowcase } from './compositions/stellar-showcase/StellarShowcase';
+import { stellarShowcaseSchema } from './compositions/stellar-showcase/schema';
 
 const RemotionRoot = () => {
   return (
@@ -59,6 +61,19 @@ const RemotionRoot = () => {
         height={1080}
         schema={textRevealSchema as any}
         defaultProps={textRevealSchema.parse({})}
+        calculateMetadata={async ({ props }) => ({
+          durationInFrames: props.durationInSeconds * 30,
+        })}
+      />
+      <Composition
+        id="StellarShowcase"
+        component={StellarShowcase}
+        durationInFrames={1200}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={stellarShowcaseSchema as any}
+        defaultProps={stellarShowcaseSchema.parse({})}
         calculateMetadata={async ({ props }) => ({
           durationInFrames: props.durationInSeconds * 30,
         })}
