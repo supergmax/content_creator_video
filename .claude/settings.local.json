@@ -64,7 +64,8 @@
       "Bash(where ffmpeg:*)",
       "Bash(cmd.exe /c \"where ffmpeg\")",
       "Bash(powershell.exe -Command \"Get-Command ffmpeg -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
-      "Bash(npx remotion:*)"
+      "Bash(npx remotion:*)",
+      "Bash(grep -E \"\\\\.md$|\\\\.ts$|\\\\.json$\")"
     ]
   }
 }
