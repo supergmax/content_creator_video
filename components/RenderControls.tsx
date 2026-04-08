@@ -79,11 +79,13 @@ export function RenderControls({ videoName, hasOutput }: Props) {
           {isRendering ? `Rendu… ${progress ?? 0}%` : 'Render'}
         </Button>
         {done && (
-          <Button variant="outline" asChild>
-            <a href={`/api/renders/${videoName}`} download={`${videoName}.mp4`}>
-              Télécharger MP4
-            </a>
-          </Button>
+          <a
+            href={`/api/renders/${videoName}`}
+            download={`${videoName}.mp4`}
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors h-9"
+          >
+            Télécharger MP4
+          </a>
         )}
       </div>
     </div>
