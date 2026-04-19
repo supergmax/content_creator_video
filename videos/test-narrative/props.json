@@ -1,0 +1,103 @@
+{
+  "scenes": [
+    {
+      "type": "hook",
+      "hookText": "Les 5 erreurs qui ruinent ton site",
+      "subText": "Celles que 90% des artisans font",
+      "accentColor": "#00d4ff",
+      "backgroundColor": "#020810",
+      "textColor": "#ffffff",
+      "showAccentLine": true,
+      "durationInSeconds": 4
+    },
+    {
+      "type": "problem",
+      "problemText": "Vous perdez trop de temps",
+      "iconEmoji": "⏰",
+      "accentColor": "#ff2d78",
+      "backgroundColor": "#0a0a15",
+      "textColor": "#ffffff",
+      "durationInSeconds": 4
+    },
+    {
+      "type": "reveal",
+      "siteName": "ARCHIDOMO",
+      "tagline": "Architecture contemporaine",
+      "sections": [
+        {
+          "id": "nav",
+          "type": "nav",
+          "text": "AGENCE · RÉALISATIONS · CONTACT",
+          "top": 0,
+          "left": 0,
+          "width": 100,
+          "height": 7,
+          "enterDelayFrames": 12,
+          "enterAnim": "slide-down"
+        },
+        {
+          "id": "title",
+          "type": "title",
+          "text": "Agence",
+          "top": 11,
+          "left": 5,
+          "width": 90,
+          "height": 12,
+          "enterDelayFrames": 24,
+          "enterAnim": "slide-right"
+        },
+        {
+          "id": "hero",
+          "type": "hero",
+          "bgColor": "#d0d0d0",
+          "top": 26,
+          "left": 5,
+          "width": 90,
+          "height": 36,
+          "enterDelayFrames": 36,
+          "enterAnim": "scale"
+        },
+        {
+          "id": "card1",
+          "type": "card",
+          "bgColor": "#ffffff",
+          "text": "Maison A",
+          "top": 66,
+          "left": 5,
+          "width": 42,
+          "height": 22,
+          "enterDelayFrames": 50,
+          "enterAnim": "drop"
+        },
+        {
+          "id": "card2",
+          "type": "card",
+          "bgColor": "#ffffff",
+          "text": "Maison B",
+          "top": 66,
+          "left": 53,
+          "width": 42,
+          "height": 22,
+          "enterDelayFrames": 60,
+          "enterAnim": "drop"
+        },
+        {
+          "id": "cta",
+          "type": "button",
+          "text": "DEVIS GRATUIT",
+          "bgColor": "#00d4ff",
+          "top": 91,
+          "left": 25,
+          "width": 50,
+          "height": 6,
+          "enterDelayFrames": 75,
+          "enterAnim": "fade"
+        }
+      ],
+      "backgroundColor": "#0a1230",
+      "paperColor": "#ffffff",
+      "cameraIntroDurationFrames": 54,
+      "durationInSeconds": 7
+    }
+  ]
+}

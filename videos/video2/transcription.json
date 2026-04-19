@@ -1,0 +1,712 @@
+{
+  "text": " Votre concurrent est sur Google, pas vous. Quand un client cherche un plombier dans votre ville, il ne vous trouve pas. Il trouve celui d'à côté. Celui qui est un site rapide. Celui qui a des avis 5 étoiles. Celui qui apparaît en premier. Ce n'est pas une question de talent. Votre travail est peut-être meilleur que le sien. Mais personne ne le sait. Parce que personne ne vous voit. En 2026, être invisible sur Internet, c'est être invisible tout court. On change ça. Un site, une fiche Google, des résultats. En 30 jours, votre téléphone sonne.",
+  "chunks": [
+    {
+      "text": " Votre",
+      "timestamp": [
+        0,
+        0.62
+      ]
+    },
+    {
+      "text": " concurrent",
+      "timestamp": [
+        0.62,
+        1.14
+      ]
+    },
+    {
+      "text": " est",
+      "timestamp": [
+        1.14,
+        1.48
+      ]
+    },
+    {
+      "text": " sur",
+      "timestamp": [
+        1.48,
+        1.74
+      ]
+    },
+    {
+      "text": " Google,",
+      "timestamp": [
+        1.74,
+        2.28
+      ]
+    },
+    {
+      "text": " pas",
+      "timestamp": [
+        2.28,
+        2.52
+      ]
+    },
+    {
+      "text": " vous.",
+      "timestamp": [
+        2.52,
+        2.86
+      ]
+    },
+    {
+      "text": " Quand",
+      "timestamp": [
+        2.92,
+        3.12
+      ]
+    },
+    {
+      "text": " un",
+      "timestamp": [
+        3.12,
+        3.32
+      ]
+    },
+    {
+      "text": " client",
+      "timestamp": [
+        3.32,
+        3.52
+      ]
+    },
+    {
+      "text": " cherche",
+      "timestamp": [
+        3.52,
+        3.82
+      ]
+    },
+    {
+      "text": " un",
+      "timestamp": [
+        3.82,
+        3.98
+      ]
+    },
+    {
+      "text": " plombier",
+      "timestamp": [
+        3.98,
+        4.3
+      ]
+    },
+    {
+      "text": " dans",
+      "timestamp": [
+        4.3,
+        4.5
+      ]
+    },
+    {
+      "text": " votre",
+      "timestamp": [
+        4.5,
+        4.78
+      ]
+    },
+    {
+      "text": " ville,",
+      "timestamp": [
+        4.78,
+        5.44
+      ]
+    },
+    {
+      "text": " il",
+      "timestamp": [
+        5.44,
+        5.62
+      ]
+    },
+    {
+      "text": " ne",
+      "timestamp": [
+        5.62,
+        5.78
+      ]
+    },
+    {
+      "text": " vous",
+      "timestamp": [
+        5.78,
+        5.98
+      ]
+    },
+    {
+      "text": " trouve",
+      "timestamp": [
+        5.98,
+        6.14
+      ]
+    },
+    {
+      "text": " pas.",
+      "timestamp": [
+        6.14,
+        6.72
+      ]
+    },
+    {
+      "text": " Il",
+      "timestamp": [
+        6.84,
+        7.08
+      ]
+    },
+    {
+      "text": " trouve",
+      "timestamp": [
+        7.08,
+        7.32
+      ]
+    },
+    {
+      "text": " celui",
+      "timestamp": [
+        7.32,
+        7.62
+      ]
+    },
+    {
+      "text": " d",
+      "timestamp": [
+        7.62,
+        7.8
+      ]
+    },
+    {
+      "text": "'à",
+      "timestamp": [
+        7.8,
+        7.9
+      ]
+    },
+    {
+      "text": " côté.",
+      "timestamp": [
+        7.9,
+        8.46
+      ]
+    },
+    {
+      "text": " Celui",
+      "timestamp": [
+        8.56,
+        8.78
+      ]
+    },
+    {
+      "text": " qui",
+      "timestamp": [
+        8.78,
+        8.94
+      ]
+    },
+    {
+      "text": " est",
+      "timestamp": [
+        8.94,
+        9.08
+      ]
+    },
+    {
+      "text": " un",
+      "timestamp": [
+        9.08,
+        9.48
+      ]
+    },
+    {
+      "text": " site",
+      "timestamp": [
+        9.48,
+        9.48
+      ]
+    },
+    {
+      "text": " rapide.",
+      "timestamp": [
+        9.48,
+        10.18
+      ]
+    },
+    {
+      "text": " Celui",
+      "timestamp": [
+        10.4,
+        10.7
+      ]
+    },
+    {
+      "text": " qui",
+      "timestamp": [
+        10.7,
+        10.84
+      ]
+    },
+    {
+      "text": " a",
+      "timestamp": [
+        10.84,
+        10.9
+      ]
+    },
+    {
+      "text": " des",
+      "timestamp": [
+        10.9,
+        11.14
+      ]
+    },
+    {
+      "text": " avis",
+      "timestamp": [
+        11.14,
+        11.4
+      ]
+    },
+    {
+      "text": " 5",
+      "timestamp": [
+        11.4,
+        11.74
+      ]
+    },
+    {
+      "text": " étoiles.",
+      "timestamp": [
+        11.74,
+        12.38
+      ]
+    },
+    {
+      "text": " Celui",
+      "timestamp": [
+        12.56,
+        12.94
+      ]
+    },
+    {
+      "text": " qui",
+      "timestamp": [
+        12.94,
+        13.14
+      ]
+    },
+    {
+      "text": " apparaît",
+      "timestamp": [
+        13.14,
+        13.4
+      ]
+    },
+    {
+      "text": " en",
+      "timestamp": [
+        13.4,
+        13.74
+      ]
+    },
+    {
+      "text": " premier.",
+      "timestamp": [
+        13.74,
+        14.14
+      ]
+    },
+    {
+      "text": " Ce",
+      "timestamp": [
+        14.26,
+        14.46
+      ]
+    },
+    {
+      "text": " n",
+      "timestamp": [
+        14.46,
+        14.64
+      ]
+    },
+    {
+      "text": "'est",
+      "timestamp": [
+        14.64,
+        14.66
+      ]
+    },
+    {
+      "text": " pas",
+      "timestamp": [
+        14.66,
+        14.76
+      ]
+    },
+    {
+      "text": " une",
+      "timestamp": [
+        14.76,
+        14.88
+      ]
+    },
+    {
+      "text": " question",
+      "timestamp": [
+        14.88,
+        15.18
+      ]
+    },
+    {
+      "text": " de",
+      "timestamp": [
+        15.18,
+        15.42
+      ]
+    },
+    {
+      "text": " talent.",
+      "timestamp": [
+        15.42,
+        15.98
+      ]
+    },
+    {
+      "text": " Votre",
+      "timestamp": [
+        16,
+        16.42
+      ]
+    },
+    {
+      "text": " travail",
+      "timestamp": [
+        16.42,
+        16.68
+      ]
+    },
+    {
+      "text": " est",
+      "timestamp": [
+        16.68,
+        16.88
+      ]
+    },
+    {
+      "text": " peut",
+      "timestamp": [
+        16.88,
+        17
+      ]
+    },
+    {
+      "text": "-être",
+      "timestamp": [
+        17,
+        17.28
+      ]
+    },
+    {
+      "text": " meilleur",
+      "timestamp": [
+        17.28,
+        17.68
+      ]
+    },
+    {
+      "text": " que",
+      "timestamp": [
+        17.68,
+        17.9
+      ]
+    },
+    {
+      "text": " le",
+      "timestamp": [
+        17.9,
+        18.14
+      ]
+    },
+    {
+      "text": " sien.",
+      "timestamp": [
+        18.14,
+        18.74
+      ]
+    },
+    {
+      "text": " Mais",
+      "timestamp": [
+        18.86,
+        19.12
+      ]
+    },
+    {
+      "text": " personne",
+      "timestamp": [
+        19.12,
+        19.52
+      ]
+    },
+    {
+      "text": " ne",
+      "timestamp": [
+        19.52,
+        19.68
+      ]
+    },
+    {
+      "text": " le",
+      "timestamp": [
+        19.68,
+        19.88
+      ]
+    },
+    {
+      "text": " sait.",
+      "timestamp": [
+        19.88,
+        20.44
+      ]
+    },
+    {
+      "text": " Parce",
+      "timestamp": [
+        20.58,
+        20.82
+      ]
+    },
+    {
+      "text": " que",
+      "timestamp": [
+        20.82,
+        21.14
+      ]
+    },
+    {
+      "text": " personne",
+      "timestamp": [
+        21.14,
+        21.58
+      ]
+    },
+    {
+      "text": " ne",
+      "timestamp": [
+        21.58,
+        21.76
+      ]
+    },
+    {
+      "text": " vous",
+      "timestamp": [
+        21.76,
+        21.98
+      ]
+    },
+    {
+      "text": " voit.",
+      "timestamp": [
+        21.98,
+        22.32
+      ]
+    },
+    {
+      "text": " En",
+      "timestamp": [
+        22.34,
+        22.6
+      ]
+    },
+    {
+      "text": " 2026,",
+      "timestamp": [
+        22.6,
+        23.7
+      ]
+    },
+    {
+      "text": " être",
+      "timestamp": [
+        23.7,
+        23.88
+      ]
+    },
+    {
+      "text": " invisible",
+      "timestamp": [
+        23.88,
+        24.36
+      ]
+    },
+    {
+      "text": " sur",
+      "timestamp": [
+        24.36,
+        24.66
+      ]
+    },
+    {
+      "text": " Internet,",
+      "timestamp": [
+        24.66,
+        25.62
+      ]
+    },
+    {
+      "text": " c",
+      "timestamp": [
+        25.62,
+        25.62
+      ]
+    },
+    {
+      "text": "'est",
+      "timestamp": [
+        25.62,
+        25.74
+      ]
+    },
+    {
+      "text": " être",
+      "timestamp": [
+        25.74,
+        26.04
+      ]
+    },
+    {
+      "text": " invisible",
+      "timestamp": [
+        26.04,
+        26.7
+      ]
+    },
+    {
+      "text": " tout",
+      "timestamp": [
+        26.7,
+        27.02
+      ]
+    },
+    {
+      "text": " court.",
+      "timestamp": [
+        27.02,
+        27.3
+      ]
+    },
+    {
+      "text": " On",
+      "timestamp": [
+        27.34,
+        27.6
+      ]
+    },
+    {
+      "text": " change",
+      "timestamp": [
+        27.6,
+        27.88
+      ]
+    },
+    {
+      "text": " ça.",
+      "timestamp": [
+        27.88,
+        28.66
+      ]
+    },
+    {
+      "text": " Un",
+      "timestamp": [
+        28.86,
+        29.06
+      ]
+    },
+    {
+      "text": " site,",
+      "timestamp": [
+        29.06,
+        29.78
+      ]
+    },
+    {
+      "text": " une",
+      "timestamp": [
+        29.78,
+        30
+      ]
+    },
+    {
+      "text": " fiche",
+      "timestamp": [
+        30,
+        30.24
+      ]
+    },
+    {
+      "text": " Google,",
+      "timestamp": [
+        30.24,
+        31.1
+      ]
+    },
+    {
+      "text": " des",
+      "timestamp": [
+        31.1,
+        31.28
+      ]
+    },
+    {
+      "text": " résultats.",
+      "timestamp": [
+        31.28,
+        31.92
+      ]
+    },
+    {
+      "text": " En",
+      "timestamp": [
+        32.3,
+        32.56
+      ]
+    },
+    {
+      "text": " 30",
+      "timestamp": [
+        32.56,
+        32.8
+      ]
+    },
+    {
+      "text": " jours,",
+      "timestamp": [
+        32.8,
+        33.68
+      ]
+    },
+    {
+      "text": " votre",
+      "timestamp": [
+        33.68,
+        33.88
+      ]
+    },
+    {
+      "text": " téléphone",
+      "timestamp": [
+        33.88,
+        34.36
+      ]
+    },
+    {
+      "text": " sonne.",
+      "timestamp": [
+        34.36,
+        35.8
+      ]
+    }
+  ]
+}

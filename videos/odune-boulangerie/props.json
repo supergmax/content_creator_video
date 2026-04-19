@@ -1,0 +1,453 @@
+{
+  "audioSrc": "/audio/odune-boulangerie.mp3",
+  "audioDurationSec": 29.4,
+  "segments": [
+    {
+      "startSec": 0,
+      "endSec": 3.06,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 0,
+          "endSec": 0.92,
+          "text": "La boulangerie de"
+        },
+        {
+          "startSec": 0.92,
+          "endSec": 1.78,
+          "text": "votre quartier fait"
+        },
+        {
+          "startSec": 1.78,
+          "endSec": 2.52,
+          "text": "le meilleur pain"
+        },
+        {
+          "startSec": 2.52,
+          "endSec": 3.06,
+          "text": "de la ville"
+        }
+      ],
+      "mediaSrc": "/images/boulangerie.png",
+      "mediaType": "image"
+    },
+    {
+      "startSec": 3.08,
+      "endSec": 5.54,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 3.08,
+          "endSec": 3.58,
+          "text": "Mais elle perd"
+        },
+        {
+          "startSec": 3.58,
+          "endSec": 4.5,
+          "text": "35%"
+        },
+        {
+          "startSec": 4.5,
+          "endSec": 5,
+          "text": "de ses clients"
+        },
+        {
+          "startSec": 5,
+          "endSec": 5.54,
+          "text": "potentiels"
+        }
+      ],
+      "mediaType": "image",
+      "mediaSrc": "/images/boulangerie.png"
+    },
+    {
+      "startSec": 5.58,
+      "endSec": 6.86,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 5.58,
+          "endSec": 6.08,
+          "text": "Pas parce que"
+        },
+        {
+          "startSec": 6.08,
+          "endSec": 6.52,
+          "text": "son pain est"
+        },
+        {
+          "startSec": 6.52,
+          "endSec": 6.86,
+          "text": "mauvais"
+        }
+      ],
+      "mediaSrc": "/images/pain-rassis.jpeg",
+      "mediaType": "image"
+    },
+    {
+      "startSec": 6.9,
+      "endSec": 9.92,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 6.9,
+          "endSec": 7.68,
+          "text": "Parce que quand"
+        },
+        {
+          "startSec": 7.68,
+          "endSec": 8.18,
+          "text": "un nouveau dans"
+        },
+        {
+          "startSec": 8.18,
+          "endSec": 8.72,
+          "text": "le quartier tape"
+        },
+        {
+          "startSec": 8.72,
+          "endSec": 9.92,
+          "text": "\"boulangerie sur Google\""
+        }
+      ],
+      "mediaSrc": "/images/telephone.mp4",
+      "mediaType": "video"
+    },
+    {
+      "startSec": 10.06,
+      "endSec": 10.9,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 10.06,
+          "endSec": 10.58,
+          "text": "il tombe sur"
+        },
+        {
+          "startSec": 10.58,
+          "endSec": 10.9,
+          "text": "une autre"
+        }
+      ],
+      "mediaType": "video",
+      "mediaSrc": "/images/telephone.mp4"
+    },
+    {
+      "startSec": 11.02,
+      "endSec": 11.92,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 11.02,
+          "endSec": 11.52,
+          "text": "Celle qui a"
+        },
+        {
+          "startSec": 11.52,
+          "endSec": 11.92,
+          "text": "un site"
+        }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 11.92,
+      "endSec": 12.88,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 11.92,
+          "endSec": 12.42,
+          "text": "celle qui a"
+        },
+        {
+          "startSec": 12.42,
+          "endSec": 12.88,
+          "text": "des photos"
+        }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 12.88,
+      "endSec": 13.76,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 12.88,
+          "endSec": 13.38,
+          "text": "celle qui a"
+        },
+        {
+          "startSec": 13.38,
+          "endSec": 13.76,
+          "text": "des avis"
+        }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 13.82,
+      "endSec": 15.06,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 13.82,
+          "endSec": 15.06,
+          "text": "En {{2026}}"
+        }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 15.06,
+      "endSec": 16.5,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 15.06,
+          "endSec": 15.72,
+          "text": "votre vitrine n'est"
+        },
+        {
+          "startSec": 15.72,
+          "endSec": 16.16,
+          "text": "plus dans la"
+        },
+        {
+          "startSec": 16.16,
+          "endSec": 16.5,
+          "text": "rue"
+        }
+      ],
+      "mediaSrc": "/images/rue-passante.mp4",
+      "mediaType": "video"
+    },
+    {
+      "startSec": 16.5,
+      "endSec": 17.52,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 16.5,
+          "endSec": 17,
+          "text": "elle est sur"
+        },
+        {
+          "startSec": 17,
+          "endSec": 17.52,
+          "text": "un écran"
+        }
+      ],
+      "mediaType": "video",
+      "mediaSrc": "/images/rue-passante.mp4"
+    },
+    {
+      "startSec": 17.52,
+      "endSec": 18.88,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "pulse",
+      "captions": [
+        {
+          "startSec": 17.52,
+          "endSec": 18.04,
+          "text": "Et si votre"
+        },
+        {
+          "startSec": 18.04,
+          "endSec": 18.88,
+          "text": "écran est vide"
+        }
+      ],
+      "backgroundColor": "#000000",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 18.88,
+      "endSec": 19.72,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "pulse",
+      "captions": [
+        {
+          "startSec": 18.88,
+          "endSec": 19.72,
+          "text": "vous n'existez pas"
+        }
+      ],
+      "backgroundColor": "#000000",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 19.8,
+      "endSec": 23.42,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 19.8,
+          "endSec": 20.36,
+          "text": "On a construit"
+        },
+        {
+          "startSec": 20.36,
+          "endSec": 21.26,
+          "text": "une présence digitale"
+        },
+        {
+          "startSec": 21.26,
+          "endSec": 22.02,
+          "text": "complète pour un"
+        },
+        {
+          "startSec": 22.02,
+          "endSec": 22.58,
+          "text": "artisan dans cette"
+        },
+        {
+          "startSec": 22.58,
+          "endSec": 23.42,
+          "text": "situation"
+        }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/artisan_laptop.jpg",
+      "mediaFit": "viewfinder"
+    },
+    {
+      "startSec": 23.42,
+      "endSec": 24.3,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 23.42,
+          "endSec": 24.3,
+          "text": "Site rapide"
+        }
+      ],
+      "mediaSrc": "/images/SiteRapide.png",
+      "mediaType": "image"
+    },
+    {
+      "startSec": 24.3,
+      "endSec": 24.84,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 24.3,
+          "endSec": 24.84,
+          "text": "fiche Google optimisé"
+        }
+      ],
+      "mediaType": "image",
+      "mediaSrc": "/images/SiteRapide.png"
+    },
+    {
+      "startSec": 24.84,
+      "endSec": 26.02,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 24.84,
+          "endSec": 25.4,
+          "text": "photo mise en"
+        },
+        {
+          "startSec": 25.4,
+          "endSec": 26.02,
+          "text": "valeur"
+        }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 26.18,
+      "endSec": 26.92,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 26.33,
+          "endSec": 27.07,
+          "text": "Résultat"
+        }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 26.92,
+      "endSec": 28.12,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 27.04,
+          "endSec": 28.24,
+          "text": "Son téléphone sonne"
+        }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/phone_ringing.jpg",
+      "mediaFit": "fullscreen"
+    },
+    {
+      "startSec": 28.12,
+      "endSec": 29.4,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        {
+          "startSec": 28.32,
+          "endSec": 29.6,
+          "text": "{{Tous les jours}}"
+        }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    }
+  ],
+  "viewfinderColor": "#ffffff",
+  "viewfinderOpacity": 0.85,
+  "fontFamily": "\"JetBrains Mono\", \"IBM Plex Mono\", \"Courier New\", monospace"
+}

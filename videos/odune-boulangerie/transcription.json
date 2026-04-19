@@ -1,0 +1,789 @@
+{
+  "text": " La boulangerie de votre quartier fait le meilleur pain de la ville. Mais elle perd 35% de ses clients potentiels. Pas parce que son pain est mauvais, parce que quand un nouveau dans le quartier est tap, boulangerie sur Google, ils tombent sur une autre, celle qui est incite, celle qui a des photos, celle qui a des avis. En 2026, votre vitrine n'est plus dans la rue. Elle est sur un écran. Et si votre écran est vide, vous n'existez pas. On a construit une présence digitale complète pour un artisan dans cette situation. Citrapide, Fichegou Google optimisé, photomise en valeur. Resultat? Son téléphone sonne. Tous les jours!",
+  "chunks": [
+    {
+      "text": " La",
+      "timestamp": [
+        0,
+        0.26
+      ]
+    },
+    {
+      "text": " boulangerie",
+      "timestamp": [
+        0.26,
+        0.78
+      ]
+    },
+    {
+      "text": " de",
+      "timestamp": [
+        0.78,
+        0.86
+      ]
+    },
+    {
+      "text": " votre",
+      "timestamp": [
+        0.86,
+        1
+      ]
+    },
+    {
+      "text": " quartier",
+      "timestamp": [
+        1,
+        1.34
+      ]
+    },
+    {
+      "text": " fait",
+      "timestamp": [
+        1.34,
+        1.72
+      ]
+    },
+    {
+      "text": " le",
+      "timestamp": [
+        1.72,
+        1.86
+      ]
+    },
+    {
+      "text": " meilleur",
+      "timestamp": [
+        1.86,
+        2.26
+      ]
+    },
+    {
+      "text": " pain",
+      "timestamp": [
+        2.26,
+        2.46
+      ]
+    },
+    {
+      "text": " de",
+      "timestamp": [
+        2.46,
+        2.58
+      ]
+    },
+    {
+      "text": " la",
+      "timestamp": [
+        2.58,
+        2.66
+      ]
+    },
+    {
+      "text": " ville.",
+      "timestamp": [
+        2.66,
+        3.08
+      ]
+    },
+    {
+      "text": " Mais",
+      "timestamp": [
+        3.12,
+        3.16
+      ]
+    },
+    {
+      "text": " elle",
+      "timestamp": [
+        3.16,
+        3.24
+      ]
+    },
+    {
+      "text": " perd",
+      "timestamp": [
+        3.24,
+        3.4
+      ]
+    },
+    {
+      "text": " 35",
+      "timestamp": [
+        3.4,
+        4.06
+      ]
+    },
+    {
+      "text": "%",
+      "timestamp": [
+        4.06,
+        4.44
+      ]
+    },
+    {
+      "text": " de",
+      "timestamp": [
+        4.44,
+        4.6
+      ]
+    },
+    {
+      "text": " ses",
+      "timestamp": [
+        4.6,
+        4.68
+      ]
+    },
+    {
+      "text": " clients",
+      "timestamp": [
+        4.68,
+        4.88
+      ]
+    },
+    {
+      "text": " potentiels.",
+      "timestamp": [
+        4.88,
+        5.56
+      ]
+    },
+    {
+      "text": " Pas",
+      "timestamp": [
+        5.62,
+        5.66
+      ]
+    },
+    {
+      "text": " parce",
+      "timestamp": [
+        5.66,
+        5.88
+      ]
+    },
+    {
+      "text": " que",
+      "timestamp": [
+        5.88,
+        5.98
+      ]
+    },
+    {
+      "text": " son",
+      "timestamp": [
+        5.98,
+        6.14
+      ]
+    },
+    {
+      "text": " pain",
+      "timestamp": [
+        6.14,
+        6.32
+      ]
+    },
+    {
+      "text": " est",
+      "timestamp": [
+        6.32,
+        6.46
+      ]
+    },
+    {
+      "text": " mauvais,",
+      "timestamp": [
+        6.46,
+        6.78
+      ]
+    },
+    {
+      "text": " parce",
+      "timestamp": [
+        6.9,
+        7.04
+      ]
+    },
+    {
+      "text": " que",
+      "timestamp": [
+        7.04,
+        7.24
+      ]
+    },
+    {
+      "text": " quand",
+      "timestamp": [
+        7.24,
+        7.54
+      ]
+    },
+    {
+      "text": " un",
+      "timestamp": [
+        7.54,
+        7.74
+      ]
+    },
+    {
+      "text": " nouveau",
+      "timestamp": [
+        7.74,
+        7.86
+      ]
+    },
+    {
+      "text": " dans",
+      "timestamp": [
+        7.86,
+        8.06
+      ]
+    },
+    {
+      "text": " le",
+      "timestamp": [
+        8.06,
+        8.14
+      ]
+    },
+    {
+      "text": " quartier",
+      "timestamp": [
+        8.14,
+        8.4
+      ]
+    },
+    {
+      "text": " est",
+      "timestamp": [
+        8.4,
+        8.5
+      ]
+    },
+    {
+      "text": " tap,",
+      "timestamp": [
+        8.5,
+        8.76
+      ]
+    },
+    {
+      "text": " boulangerie",
+      "timestamp": [
+        8.96,
+        9.36
+      ]
+    },
+    {
+      "text": " sur",
+      "timestamp": [
+        9.36,
+        9.54
+      ]
+    },
+    {
+      "text": " Google,",
+      "timestamp": [
+        9.54,
+        9.86
+      ]
+    },
+    {
+      "text": " ils",
+      "timestamp": [
+        10.12,
+        10.14
+      ]
+    },
+    {
+      "text": " tombent",
+      "timestamp": [
+        10.14,
+        10.34
+      ]
+    },
+    {
+      "text": " sur",
+      "timestamp": [
+        10.34,
+        10.52
+      ]
+    },
+    {
+      "text": " une",
+      "timestamp": [
+        10.52,
+        10.64
+      ]
+    },
+    {
+      "text": " autre,",
+      "timestamp": [
+        10.64,
+        10.92
+      ]
+    },
+    {
+      "text": " celle",
+      "timestamp": [
+        11.08,
+        11.12
+      ]
+    },
+    {
+      "text": " qui",
+      "timestamp": [
+        11.12,
+        11.3
+      ]
+    },
+    {
+      "text": " est",
+      "timestamp": [
+        11.3,
+        11.34
+      ]
+    },
+    {
+      "text": " incite,",
+      "timestamp": [
+        11.34,
+        11.82
+      ]
+    },
+    {
+      "text": " celle",
+      "timestamp": [
+        11.82,
+        12.02
+      ]
+    },
+    {
+      "text": " qui",
+      "timestamp": [
+        12.02,
+        12.18
+      ]
+    },
+    {
+      "text": " a",
+      "timestamp": [
+        12.18,
+        12.26
+      ]
+    },
+    {
+      "text": " des",
+      "timestamp": [
+        12.26,
+        12.36
+      ]
+    },
+    {
+      "text": " photos,",
+      "timestamp": [
+        12.36,
+        12.76
+      ]
+    },
+    {
+      "text": " celle",
+      "timestamp": [
+        12.94,
+        12.96
+      ]
+    },
+    {
+      "text": " qui",
+      "timestamp": [
+        12.96,
+        13.14
+      ]
+    },
+    {
+      "text": " a",
+      "timestamp": [
+        13.14,
+        13.2
+      ]
+    },
+    {
+      "text": " des",
+      "timestamp": [
+        13.2,
+        13.34
+      ]
+    },
+    {
+      "text": " avis.",
+      "timestamp": [
+        13.34,
+        13.84
+      ]
+    },
+    {
+      "text": " En",
+      "timestamp": [
+        13.84,
+        13.92
+      ]
+    },
+    {
+      "text": " 2026,",
+      "timestamp": [
+        13.92,
+        14.8
+      ]
+    },
+    {
+      "text": " votre",
+      "timestamp": [
+        14.8,
+        15.16
+      ]
+    },
+    {
+      "text": " vitrine",
+      "timestamp": [
+        15.16,
+        15.48
+      ]
+    },
+    {
+      "text": " n",
+      "timestamp": [
+        15.48,
+        15.64
+      ]
+    },
+    {
+      "text": "'est",
+      "timestamp": [
+        15.64,
+        15.64
+      ]
+    },
+    {
+      "text": " plus",
+      "timestamp": [
+        15.64,
+        15.82
+      ]
+    },
+    {
+      "text": " dans",
+      "timestamp": [
+        15.82,
+        15.94
+      ]
+    },
+    {
+      "text": " la",
+      "timestamp": [
+        15.94,
+        16.06
+      ]
+    },
+    {
+      "text": " rue.",
+      "timestamp": [
+        16.06,
+        16.48
+      ]
+    },
+    {
+      "text": " Elle",
+      "timestamp": [
+        16.5,
+        16.58
+      ]
+    },
+    {
+      "text": " est",
+      "timestamp": [
+        16.58,
+        16.68
+      ]
+    },
+    {
+      "text": " sur",
+      "timestamp": [
+        16.68,
+        16.8
+      ]
+    },
+    {
+      "text": " un",
+      "timestamp": [
+        16.8,
+        16.94
+      ]
+    },
+    {
+      "text": " écran.",
+      "timestamp": [
+        16.94,
+        17.36
+      ]
+    },
+    {
+      "text": " Et",
+      "timestamp": [
+        17.56,
+        17.66
+      ]
+    },
+    {
+      "text": " si",
+      "timestamp": [
+        17.66,
+        17.78
+      ]
+    },
+    {
+      "text": " votre",
+      "timestamp": [
+        17.78,
+        18
+      ]
+    },
+    {
+      "text": " écran",
+      "timestamp": [
+        18,
+        18.18
+      ]
+    },
+    {
+      "text": " est",
+      "timestamp": [
+        18.18,
+        18.3
+      ]
+    },
+    {
+      "text": " vide,",
+      "timestamp": [
+        18.3,
+        18.76
+      ]
+    },
+    {
+      "text": " vous",
+      "timestamp": [
+        18.76,
+        18.94
+      ]
+    },
+    {
+      "text": " n",
+      "timestamp": [
+        18.94,
+        19.04
+      ]
+    },
+    {
+      "text": "'existez",
+      "timestamp": [
+        19.04,
+        19.32
+      ]
+    },
+    {
+      "text": " pas.",
+      "timestamp": [
+        19.32,
+        19.78
+      ]
+    },
+    {
+      "text": " On",
+      "timestamp": [
+        19.78,
+        19.9
+      ]
+    },
+    {
+      "text": " a",
+      "timestamp": [
+        19.9,
+        20
+      ]
+    },
+    {
+      "text": " construit",
+      "timestamp": [
+        20,
+        20.3
+      ]
+    },
+    {
+      "text": " une",
+      "timestamp": [
+        20.3,
+        20.44
+      ]
+    },
+    {
+      "text": " présence",
+      "timestamp": [
+        20.44,
+        20.66
+      ]
+    },
+    {
+      "text": " digitale",
+      "timestamp": [
+        20.66,
+        21.1
+      ]
+    },
+    {
+      "text": " complète",
+      "timestamp": [
+        21.1,
+        21.58
+      ]
+    },
+    {
+      "text": " pour",
+      "timestamp": [
+        21.74,
+        21.78
+      ]
+    },
+    {
+      "text": " un",
+      "timestamp": [
+        21.78,
+        21.88
+      ]
+    },
+    {
+      "text": " artisan",
+      "timestamp": [
+        21.88,
+        22.16
+      ]
+    },
+    {
+      "text": " dans",
+      "timestamp": [
+        22.16,
+        22.34
+      ]
+    },
+    {
+      "text": " cette",
+      "timestamp": [
+        22.34,
+        22.52
+      ]
+    },
+    {
+      "text": " situation.",
+      "timestamp": [
+        22.52,
+        23.18
+      ]
+    },
+    {
+      "text": " Citrapide,",
+      "timestamp": [
+        23.4,
+        24.24
+      ]
+    },
+    {
+      "text": " Fichegou",
+      "timestamp": [
+        24.24,
+        24.5
+      ]
+    },
+    {
+      "text": " Google",
+      "timestamp": [
+        24.5,
+        24.62
+      ]
+    },
+    {
+      "text": " optimisé,",
+      "timestamp": [
+        23.84,
+        24.8
+      ]
+    },
+    {
+      "text": " photomise",
+      "timestamp": [
+        24.8,
+        25.2
+      ]
+    },
+    {
+      "text": " en",
+      "timestamp": [
+        25.2,
+        25.3
+      ]
+    },
+    {
+      "text": " valeur.",
+      "timestamp": [
+        25.3,
+        26
+      ]
+    },
+    {
+      "text": " Resultat?",
+      "timestamp": [
+        26.12,
+        26.78
+      ]
+    },
+    {
+      "text": " Son",
+      "timestamp": [
+        26.78,
+        27
+      ]
+    },
+    {
+      "text": " téléphone",
+      "timestamp": [
+        27,
+        27.24
+      ]
+    },
+    {
+      "text": " sonne.",
+      "timestamp": [
+        27.24,
+        27.9
+      ]
+    },
+    {
+      "text": " Tous",
+      "timestamp": [
+        28.1,
+        28.12
+      ]
+    },
+    {
+      "text": " les",
+      "timestamp": [
+        28.12,
+        28.24
+      ]
+    },
+    {
+      "text": " jours!",
+      "timestamp": [
+        28.24,
+        30.6
+      ]
+    }
+  ]
+}

@@ -1,8 +1,17 @@
-import { Audio, interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
+import { Audio, Easing, interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 import { BackgroundGradient } from '@/remotion/shared/BackgroundGradient';
 import type { SocialHookProps } from './schema';
 
-// Chaque mot du hookText entre avec un spring snappy décalé
+// Durée d'animation d'un mot (en frames @ 30fps)
+// Avec WORD_DELAY plus court, ça crée l'overlap = feel AE lissé
+// v3: ralenti légèrement pour laisser respirer le texte
+const WORD_ANIM_DURATION = 22;
+const WORD_DELAY = 5; // frames entre le démarrage de chaque mot → overlap
+
+// Courbe AE-like : ease-out cubic (démarrage franc, fin très lisse)
+// Équivalent approximatif d'un lissage fin ~70% dans After Effects
+const EASE_OUT_AE = Easing.bezier(0.25, 0.1, 0.25, 1);
+
 const WordReveal = ({
   word,
   startFrame,
@@ -19,18 +28,24 @@ const WordReveal = ({
   fontSize: number;
 }) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
 
-  const progress = spring({
-    frame: frame - startFrame,
-    fps,
-    config: { damping: 7, stiffness: 400, mass: 0.4 },
-  });
+  // Progress du mot sur sa durée d'animation, avec easing AE-like
+  const progress = interpolate(
+    frame - startFrame,
+    [0, WORD_ANIM_DURATION],
+    [0, 1],
+    {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+      easing: EASE_OUT_AE,
+    },
+  );
 
-  const opacity = interpolate(progress, [0, 0.4, 1], [0, 1, 1], { extrapolateRight: 'clamp' });
-  const scale = interpolate(progress, [0, 1], [1.5, 1], { extrapolateRight: 'clamp' });
-  const y = interpolate(progress, [0, 1], [80, 0], { extrapolateRight: 'clamp' });
-  const blur = interpolate(progress, [0, 0.5, 1], [8, 2, 0], { extrapolateRight: 'clamp' });
+  // Propriétés animées depuis progress lissé
+  const opacity = progress;
+  const scale = interpolate(progress, [0, 1], [1.08, 1]); // pop discret, pas de 1.5
+  const y = interpolate(progress, [0, 1], [50, 0]);
+  const blur = interpolate(progress, [0, 1], [6, 0]);
 
   return (
     <span
@@ -62,44 +77,77 @@ export const SocialHook = ({
   const { fps, width, height } = useVideoConfig();
 
   const words = hookText.split(' ');
-  const WORD_DELAY = 7; // frames entre chaque mot
-  const LAST_WORD_FRAME = words.length * WORD_DELAY;
+  const LAST_WORD_START = (words.length - 1) * WORD_DELAY;
+  const LAST_WORD_END = LAST_WORD_START + WORD_ANIM_DURATION;
 
-  // Ligne accent : slide depuis la gauche
-  const lineProgress = spring({
-    frame: frame - Math.round(fps * 0.1),
-    fps,
-    config: { damping: 20, stiffness: 250 },
-  });
-  const lineWidth = interpolate(lineProgress, [0, 1], [0, width * 0.65], {
-    extrapolateRight: 'clamp',
-  });
+  // Ligne accent horizontale : slide depuis la gauche, easing smooth
+  const lineProgress = interpolate(
+    frame - Math.round(fps * 0.1),
+    [0, 28],
+    [0, 1],
+    {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+      easing: EASE_OUT_AE,
+    },
+  );
+  const lineWidth = interpolate(lineProgress, [0, 1], [0, width * 0.65]);
 
-  // SubText : apparaît après le dernier mot
-  const subDelay = LAST_WORD_FRAME + fps * 0.4;
-  const subProgress = spring({
-    frame: frame - subDelay,
-    fps,
-    config: { damping: 14, stiffness: 150 },
-  });
-  const subOpacity = interpolate(subProgress, [0, 1], [0, 1], { extrapolateRight: 'clamp' });
-  const subY = interpolate(subProgress, [0, 1], [40, 0], { extrapolateRight: 'clamp' });
+  // SubText : apparaît après le dernier mot, ease out smooth
+  const subDelay = LAST_WORD_END + Math.round(fps * 0.1);
+  const subProgress = interpolate(
+    frame - subDelay,
+    [0, 20],
+    [0, 1],
+    {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+      easing: EASE_OUT_AE,
+    },
+  );
+  const subOpacity = subProgress;
+  const subY = interpolate(subProgress, [0, 1], [30, 0]);
 
-  // Badge "?" qui pulse à la fin
-  const badgeDelay = LAST_WORD_FRAME + fps * 1.2;
-  const badgeProgress = spring({
-    frame: frame - badgeDelay,
-    fps,
-    config: { damping: 5, stiffness: 300, mass: 0.6 },
-  });
-  const badgeScale = interpolate(badgeProgress, [0, 1], [0, 1], { extrapolateRight: 'clamp' });
+  // Badge "stellarpulse" en bas — v3: refactor complet
+  // Entrée : slide-up depuis le bas + micro-rotation + blur fade + scale subtil
+  // Après l'entrée : respiration cosinus très légère sur Y et rotation
+  const badgeDelay = LAST_WORD_END + Math.round(fps * 0.6);
+  const badgeFrame = frame - badgeDelay;
+  const BADGE_ENTER_DURATION = 28;
 
-  // Vignette de fond qui pulse en rythme avec les mots
+  // Entrée avec ease out cubic AE-like
+  const badgeEnterProgress = interpolate(
+    badgeFrame,
+    [0, BADGE_ENTER_DURATION],
+    [0, 1],
+    {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+      easing: EASE_OUT_AE,
+    },
+  );
+
+  const badgeOpacity = badgeEnterProgress;
+  const badgeEnterY = interpolate(badgeEnterProgress, [0, 1], [55, 0]);
+  const badgeEnterRot = interpolate(badgeEnterProgress, [0, 1], [-3, 0]);
+  const badgeEnterScale = interpolate(badgeEnterProgress, [0, 1], [0.85, 1]);
+  const badgeBlur = interpolate(badgeEnterProgress, [0, 1], [10, 0]);
+
+  // Respiration continue (cosine) — commence uniquement après l'entrée
+  // v4: ralenti en mode "chill" — périodes plus longues, amplitudes adoucies
+  const breathPhase = Math.max(0, badgeFrame - BADGE_ENTER_DURATION);
+  const breathY = Math.sin((breathPhase / 120) * Math.PI * 2) * 2; // ±2px, période 4s
+  const breathRot = Math.cos((breathPhase / 150) * Math.PI * 2) * 0.5; // ±0.5°, période 5s
+
+  const badgeY = badgeEnterY + breathY;
+  const badgeRot = badgeEnterRot + breathRot;
+  const badgeScale = badgeEnterScale;
+
+  // Vignette de fond qui respire — plus lisse qu'avant (période plus longue)
   const vignetteOpacity = interpolate(
-    frame % WORD_DELAY,
-    [0, 2, WORD_DELAY],
-    [0.6, 0.3, 0.4],
-    { extrapolateRight: 'clamp' },
+    Math.sin((frame / 45) * Math.PI * 2),
+    [-1, 1],
+    [0.35, 0.55],
   );
 
   const fontSize = Math.round(width / 7);
@@ -130,7 +178,7 @@ export const SocialHook = ({
         animated={true}
       />
 
-      {/* Vignette radiale pour donner du relief */}
+      {/* Vignette radiale qui respire doucement */}
       <div
         style={{
           position: 'absolute',
@@ -141,12 +189,12 @@ export const SocialHook = ({
         }}
       />
 
-      {/* Ligne accent horizontale */}
+      {/* Ligne accent horizontale — v4: positionnée entre "Les 5" et "erreurs" (souligne sans barrer) */}
       <div
         style={{
           position: 'absolute',
           left: Math.round(width * 0.175),
-          top: Math.round(height * 0.37),
+          top: Math.round(height * 0.35),
           width: lineWidth,
           height: 5,
           background: `linear-gradient(90deg, ${accentColor}, ${accentColor}00)`,
@@ -156,7 +204,7 @@ export const SocialHook = ({
         }}
       />
 
-      {/* Hook text — mot par mot */}
+      {/* Hook text — mot par mot avec overlap */}
       <div
         style={{
           position: 'relative',
@@ -206,13 +254,15 @@ export const SocialHook = ({
         {subText}
       </div>
 
-      {/* Badge accent en bas */}
+      {/* Badge accent en bas — v3: slide-up + rotation + blur fade + cosine respiration */}
       <div
         style={{
           position: 'absolute',
           bottom: Math.round(height * 0.08),
           zIndex: 3,
-          transform: `scale(${badgeScale})`,
+          transform: `translateY(${badgeY}px) rotate(${badgeRot}deg) scale(${badgeScale})`,
+          filter: `blur(${badgeBlur}px)`,
+          opacity: badgeOpacity,
           display: 'flex',
           alignItems: 'center',
           gap: 12,

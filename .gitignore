@@ -37,14 +37,21 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# remotion renders
-/out
-/public/renders/
-*.mp4
-
 # Superpowers
 .superpowers/
 
-# Env
-.env.local
-.env*.local
+# === MEDIA ASSETS (personal/per-video — NOT shared) ===
+/public/audio/
+/public/ambiance/
+/public/images/
+/public/sfx/
+/public/renders/
+*.mp4
+*.mp3
+*.wav
+
+# Reference frames (personal analysis)
+/brain_refs/
+
+# Whisper model cache
+/models/

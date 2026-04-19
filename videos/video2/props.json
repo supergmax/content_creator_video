@@ -1,0 +1,314 @@
+{
+  "audioSrc": "/audio/video2-clean.mp3",
+  "audioDurationSec": 34.82,
+  "segments": [
+    {
+      "startSec": 0,
+      "endSec": 2.28,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 0, "endSec": 1.48, "text": "Votre concurrent est" },
+        { "startSec": 1.48, "endSec": 2.28, "text": "sur Google" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_01_google.jpg",
+      "mediaFit": "viewfinder"
+    },
+    {
+      "startSec": 2.28,
+      "endSec": 2.86,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "pulse",
+      "captions": [
+        { "startSec": 2.28, "endSec": 2.86, "text": "{{pas vous}}" }
+      ],
+      "backgroundColor": "#000000",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 2.92,
+      "endSec": 5.44,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 2.92, "endSec": 3.52, "text": "Quand un client" },
+        { "startSec": 3.52, "endSec": 4.3, "text": "cherche un plombier" },
+        { "startSec": 4.3, "endSec": 5.44, "text": "dans votre ville" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_plumber.jpg",
+      "mediaFit": "fullscreen"
+    },
+    {
+      "startSec": 5.44,
+      "endSec": 6.72,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 5.44, "endSec": 5.98, "text": "il ne vous" },
+        { "startSec": 5.98, "endSec": 6.72, "text": "trouve pas" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_plumber.jpg",
+      "mediaFit": "fullscreen"
+    },
+    {
+      "startSec": 6.84,
+      "endSec": 8.46,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 6.84, "endSec": 7.62, "text": "Il trouve celui" },
+        { "startSec": 7.62, "endSec": 8.46, "text": "d'à côté" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_02_plumber_silhouette.jpg",
+      "mediaFit": "viewfinder"
+    },
+    {
+      "startSec": 8.56,
+      "endSec": 10.18,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 8.56, "endSec": 9.08, "text": "Celui qui est" },
+        { "startSec": 9.08, "endSec": 10.18, "text": "un site rapide" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_04_website.jpg",
+      "mediaFit": "viewfinder"
+    },
+    {
+      "startSec": 10.4,
+      "endSec": 12.38,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 10.4, "endSec": 10.9, "text": "Celui qui a" },
+        { "startSec": 10.9, "endSec": 11.4, "text": "des avis" },
+        { "startSec": 11.4, "endSec": 11.9, "text": "{{5}}" },
+        { "startSec": 11.9, "endSec": 12.38, "text": "étoiles" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_03_stars.jpg",
+      "mediaFit": "viewfinder"
+    },
+    {
+      "startSec": 12.56,
+      "endSec": 14.14,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 12.56, "endSec": 13.4, "text": "Celui qui apparaît" },
+        { "startSec": 13.4, "endSec": 14.14, "text": "en premier" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_03_stars.jpg",
+      "mediaFit": "viewfinder"
+    },
+    {
+      "startSec": 14.26,
+      "endSec": 15.98,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 14.26, "endSec": 14.76, "text": "Ce n'est pas" },
+        { "startSec": 14.76, "endSec": 15.42, "text": "une question de" },
+        { "startSec": 15.42, "endSec": 15.98, "text": "{{talent}}" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 16,
+      "endSec": 18.74,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 16, "endSec": 16.88, "text": "Votre travail est" },
+        { "startSec": 16.88, "endSec": 17.68, "text": "peut-être meilleur" },
+        { "startSec": 17.68, "endSec": 18.74, "text": "que le sien" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/artisan_laptop.jpg",
+      "mediaFit": "fullscreen"
+    },
+    {
+      "startSec": 18.86,
+      "endSec": 20.44,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 18.86, "endSec": 19.68, "text": "Mais personne ne" },
+        { "startSec": 19.68, "endSec": 20.44, "text": "le sait" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 20.58,
+      "endSec": 22.32,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "pulse",
+      "captions": [
+        { "startSec": 20.58, "endSec": 21.58, "text": "Parce que personne" },
+        { "startSec": 21.58, "endSec": 22.32, "text": "{{ne vous voit}}" }
+      ],
+      "backgroundColor": "#000000",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 22.34,
+      "endSec": 23.7,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 22.34, "endSec": 22.84, "text": "En" },
+        { "startSec": 22.84, "endSec": 23.7, "text": "{{2026}}" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 23.7,
+      "endSec": 25.62,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 23.7, "endSec": 24.66, "text": "être invisible sur" },
+        { "startSec": 24.66, "endSec": 25.62, "text": "Internet" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_05_invisible.jpg",
+      "mediaFit": "fullscreen"
+    },
+    {
+      "startSec": 25.62,
+      "endSec": 27.3,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "pulse",
+      "captions": [
+        { "startSec": 25.62, "endSec": 26.7, "text": "c'est être invisible" },
+        { "startSec": 26.7, "endSec": 27.3, "text": "{{tout court}}" }
+      ],
+      "backgroundColor": "#000000",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 27.34,
+      "endSec": 28.66,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 27.34, "endSec": 28.66, "text": "On change ça" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 28.86,
+      "endSec": 29.78,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 28.86, "endSec": 29.78, "text": "Un site" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_06_workspace.jpg",
+      "mediaFit": "viewfinder"
+    },
+    {
+      "startSec": 29.78,
+      "endSec": 31.1,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 29.78, "endSec": 31.1, "text": "une fiche Google" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_06_workspace.jpg",
+      "mediaFit": "viewfinder"
+    },
+    {
+      "startSec": 31.1,
+      "endSec": 31.92,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 31.25, "endSec": 32.07, "text": "des résultats" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_06_workspace.jpg",
+      "mediaFit": "viewfinder"
+    },
+    {
+      "startSec": 32.3,
+      "endSec": 33.68,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 32.3, "endSec": 32.56, "text": "En" },
+        { "startSec": 32.56, "endSec": 33.06, "text": "{{30}}" },
+        { "startSec": 33.06, "endSec": 33.68, "text": "jours" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "none"
+    },
+    {
+      "startSec": 33.68,
+      "endSec": 35.8,
+      "textColor": "#ffffff",
+      "textPosition": "center",
+      "viewfinderAnim": "auto",
+      "captions": [
+        { "startSec": 33.8, "endSec": 35.92, "text": "votre téléphone sonne" }
+      ],
+      "backgroundColor": "#0a0a0f",
+      "mediaType": "image",
+      "mediaSrc": "/images/generated/v2_07_phone.jpg",
+      "mediaFit": "fullscreen"
+    }
+  ],
+  "viewfinderColor": "#ffffff",
+  "viewfinderOpacity": 0.85,
+  "fontFamily": "\"JetBrains Mono\", \"IBM Plex Mono\", \"Courier New\", monospace",
+  "musicSrc": "/ambiance/mixkit-relax-beat-292.mp3",
+  "musicVolume": 0.22,
+  "sfxOnMediaChange": "/sfx/commeodune.wav",
+  "sfxOnDarkImpact": "/sfx/DEEP_HIT_1.wav",
+  "sfxOnHighlight": "/sfx/WHOOSH_LITE.wav",
+  "sfxVolume": 0.3
+}
